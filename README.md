@@ -7,3 +7,6 @@
 4.use ```npm run dev``` to run the app
 
 5.you can edit this in vscode
+
+-created login page
+-added google auth which redirects to a dashboard page which has a logout button
