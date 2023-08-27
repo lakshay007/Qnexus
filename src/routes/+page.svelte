@@ -16,6 +16,7 @@ const handlegoogle = (e) =>{
 }
 </script>
 <main>
+  <div class="maincontainer1">
     <div class="container" id="box">
         <h1 class="login">Login to your account</h1>
         <h2>login using social networks</h2>
@@ -31,14 +32,18 @@ const handlegoogle = (e) =>{
 
         </a>
         </div>
+      </div>
 </main>
 <style>
      @import url(https://fonts.googleapis.com/css?family=Bungee);
-    :global(body){
-        background-color: #e5e5f7;
-        opacity: 0.8;
-        background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 10px, transparent 20px, transparent 10px);
-        background-blend-mode: multiply;
+    .maincontainer1{
+      min-height: 100vh;
+      display: flex;
+      position: relative;
+      background-color: #e5e5f7;
+      opacity: 0.8;
+      background: repeating-linear-gradient( 45deg, #444cf7, #444cf7 5px, #e5e5f7 5px, #e5e5f7 25px );
+
     }
     #box {
         margin-top: 13%;
@@ -65,10 +70,10 @@ const handlegoogle = (e) =>{
     width: -moz-fit-content;
   width: fit-content;
   display: table;
-    left: 31.5%;
+    left: 32%;
     font-family: bungee;
     position: absolute;
-    bottom: 63%;
+    bottom: 66%;
     padding: 0%;
     font-size: 2.7vw;
     
