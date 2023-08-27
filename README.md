@@ -8,5 +8,5 @@
 
 5.you can edit this in vscode
 
--created login page
+-created (basic, has to be changed)login page
 -added google auth which redirects to a dashboard page which has a logout button
