@@ -27,7 +27,7 @@ signOut(auth).then(() => {
         <a href="#" class="nav-item" style="--i: 0">Home</a>
         <a href="#" class="nav-item" style="--i: 1">Learn</a>
         <a href="#" class="nav-item" style="--i: 2">Practice</a>
-        <a href="#" class="nav-item" style="--i: 3">Compete</a>
+        <a href="quiz" class="nav-item" style="--i: 3">Compete</a>
         <a href="#" on:click={handlesignout} class="nav-item" style="--i: 3">Sign Out</a>
       </nav>
     </header>
