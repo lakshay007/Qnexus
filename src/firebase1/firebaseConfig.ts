@@ -1,6 +1,6 @@
-
+import { getStorage } from "firebase/storage";
 import { initializeApp } from "firebase/app";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged, type User } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { writable } from "svelte/store";
 // Firebase credentials to not touch
@@ -19,10 +19,10 @@ const firebaseConfig = {
  */
 function userStore() {
   // Don't render if firebase sdk is not available
-  let unsubscribe;
+  let unsubscribe: () => void;
   if (!auth || !globalThis.window) {
     console.warn('Auth is not initialized or not in browser');
-    const { subscribe } = writable(null);
+    const { subscribe } = writable<User | null>(null);
     return {
       subscribe,
     }
