@@ -4,7 +4,6 @@
     import { getAuth, onAuthStateChanged } from "firebase/auth";
     import { onMount } from "svelte";
     import questions from "../../questions/questions.json"
-    console.log(questions)
     let ans = 0;
     let a;
     let flag = 0;
