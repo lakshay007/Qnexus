@@ -1,29 +1,21 @@
 <script>
   import Icon from 'svelte-icons-pack/Icon.svelte';
   import GoogleIcon from 'svelte-icons-pack/bs/BsGoogle';
-  import sayali from '$lib/assets/sayali.jpg';
-  import akash from '$lib/assets/akash.jpg';
-  import lakshay from '$lib/assets/lakshay.jpg';
-  import yashyas from '$lib/assets/yashas.jpg';
-  import zaid from '$lib/assets/zaid.jpg';
-  import question from '$lib/assets/question.png';
-  import search from '$lib/assets/search.png';
-  import stairs from '$lib/assets/stair.png';
+  import sayali from '../../assets/sayali.jpg';
+  import akash from '../../assets/akash.jpg';
+  import lakshay from '../../assets/lakshay.jpg';
+  import yashyas from '../../assets/yashas.jpg';
+  import zaid from '../../assets/zaid.jpg';
+  import question from '../../assets/question.png';
+  import search from '../../assets/search.png';
+  import stairs from '../../assets/stair.png';
   import Participant from '../lib/components/participant.svelte';
-  import QnexusColor from '$lib/assets/q-nexus-logo-light-transparent.png'
+  import QnexusColor from '../../assets/q-nexus-logo-light-transparent.png'
   import Discover from '../lib/components/discover.svelte';
   import inView from "$lib/components/animationScroll/inView.js";
-  import bg1 from "$lib/assets/bg1.jpg";
+  import bg1 from "../../assets/bg1.jpg";
   let visi1 = [];
   let visi2 = [];
-  import { auth, user } from "../firebase1/firebaseConfig";
-  import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-
-  async function signInWithGoogle() {
-      const provider = new GoogleAuthProvider();
-      const user = await signInWithPopup(auth, provider);
-      console.log(user);
-  }
 </script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
@@ -58,13 +50,9 @@
       </div>
       <div class="text-4xl font-bold font-sans">Game Hard, Learn Harder</div>
       <div class="text-3xl font-semibold font-sans">Plugging in...</div>
-      {#if $user}
-        <button class="btn btn-primary" on:click={signInWithGoogle}>
-          <Icon src={GoogleIcon} /> Sign In With Google
-        </button>
-      {:else}
-        You are logged in
-      {/if}
+      <button class="btn btn-primary">
+        <Icon src={GoogleIcon} /> Sign In With Google
+      </button>
   </div>
   <div id="discover" class="flex flex-col items-center justify-center">
       <div id="ani1"

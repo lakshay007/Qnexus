@@ -14,33 +14,6 @@ const firebaseConfig = {
 };
 
 
-/**
- * @returns a store with the current firebase user
- */
-function userStore() {
-  // Don't render if firebase sdk is not available
-  let unsubscribe;
-  if (!auth || !globalThis.window) {
-    console.warn('Auth is not initialized or not in browser');
-    const { subscribe } = writable(null);
-    return {
-      subscribe,
-    }
-  }
-
-  const {subscribe} = writable(auth?.currentUser ?? null, (set) => {
-    unsubscribe = onAuthStateChanged(auth, (user) => {
-      set(user);
-    });
-
-    return () => unsubscribe();
-  });
-
-  return {
-    subscribe,
-  };
-}
-
 
 // Initialize Realtime Database and get a reference to the service
 
@@ -49,5 +22,4 @@ function userStore() {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-export const user = userStore();
 export default app;
