@@ -13,13 +13,18 @@
     onMount(async() => {
          x = doc(db,"room", "one");
      ref = await getDoc(x);
-     
-    if(ref.data().player1state==="connected" &&ref.data().player1state==="connected"){
-        flag = 1;
-        setTimeout(() => {
+     const unsubscribe = onSnapshot(doc(db, "room", "one"), async(doc) => {
+        if(ref.data().player1state==="connected" &&ref.data().player1state==="connected"){
+        flag = 1
+
+    }
+});
+unsubscribe();
+setTimeout(() => {
     flag = 3;
     }, 3000);
-    }
+    
+    
     onAuthStateChanged(auth, (user) => {
   if (user) { 
      a = user.displayName + "score"
