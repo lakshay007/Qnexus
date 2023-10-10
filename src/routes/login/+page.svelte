@@ -9,11 +9,11 @@
     window.location.href = "dashboard";  
     const uid = user.uid;  
   } 
-});  
-const handlegoogle = (e) =>{
-    const provider =  new GoogleAuthProvider();
-    return signInWithPopup(auth,provider);
-}
+  });  
+  const handlegoogle = (e) =>{
+      const provider =  new GoogleAuthProvider();
+      return signInWithPopup(auth,provider);
+  }
 </script>
 <main>
   <div class="maincontainer1">

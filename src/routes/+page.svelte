@@ -1,21 +1,35 @@
 <script>
   import Icon from 'svelte-icons-pack/Icon.svelte';
   import GoogleIcon from 'svelte-icons-pack/bs/BsGoogle';
-  import sayali from '../../assets/sayali.jpg';
-  import akash from '../../assets/akash.jpg';
-  import lakshay from '../../assets/lakshay.jpg';
-  import yashyas from '../../assets/yashas.jpg';
-  import zaid from '../../assets/zaid.jpg';
-  import question from '../../assets/question.png';
-  import search from '../../assets/search.png';
-  import stairs from '../../assets/stair.png';
+  import sayali from '../assets/sayali.jpg';
+  import akash from '../assets/akash.jpg';
+  import lakshay from '../assets/lakshay.jpg';
+  import yashyas from '../assets/yashas.jpg';
+  import zaid from '../assets/zaid.jpg';
+  import question from '../assets/question.png';
+  import search from '../assets/search.png';
+  import stairs from '../assets/stair.png';
   import Participant from '../lib/components/participant.svelte';
-  import QnexusColor from '../../assets/q-nexus-logo-light-transparent.png'
+  import QnexusColor from '../assets/q-nexus-logo-light-transparent.png'
   import Discover from '../lib/components/discover.svelte';
   import inView from "$lib/components/animationScroll/inView.js";
-  import bg1 from "../../assets/bg1.jpg";
+  import bg1 from "../assets/bg1.jpg";
+  import { GoogleAuthProvider ,signInWithPopup } from "firebase/auth";
+  import { auth } from "../firebase1/firebaseConfig";
+  import { getAuth, onAuthStateChanged } from "firebase/auth";
   let visi1 = [];
   let visi2 = [];
+  const auth1 = getAuth();
+  onAuthStateChanged(auth1, (user) => {
+    if (user) {
+      window.location.href = "dashboard";  
+      const uid = user.uid;  
+    } 
+  });  
+  const handlegoogle = (e) =>{
+    const provider =  new GoogleAuthProvider();
+    return signInWithPopup(auth,provider);
+  }
 </script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
@@ -50,7 +64,7 @@
       </div>
       <div class="text-4xl font-bold font-sans">Game Hard, Learn Harder</div>
       <div class="text-3xl font-semibold font-sans">Plugging in...</div>
-      <button class="btn btn-primary">
+      <button class="btn btn-primary" on:click={handlegoogle}>
         <Icon src={GoogleIcon} /> Sign In With Google
       </button>
   </div>
