@@ -21,7 +21,7 @@
 const x = doc(db,"room", "one");
 onSnapshot(doc(db, "room", "one"), async(doc) => {
     if(doc.data().subgamestate===1){
-       updateDoc(x, {
+       setDoc(x, {
        player1state: "connected",
 },{ merge: true });
 window.location.href = "room";  }
