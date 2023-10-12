@@ -57,13 +57,12 @@
   }
 </style>
 <div id="main" class="grid grid-rows-3">
-  <div class="h-screen flex flex-col items-center justify-center gap-y-4 bg-fixed" style="background-image:url({bg1})">
+  <div class="h-screen flex flex-col items-center justify-center gap-y-4 bg-fixed" style="background-image:url({bg1}); background-size: auto 100%;">
       <div class="flex gap-5">
         <img src={QnexusColor} alt=""/>
         <p style="font-family: Merriweather" class="text-8xl text-white">QNexus</p>
       </div>
       <div class="text-4xl font-bold font-sans">Game Hard, Learn Harder</div>
-      <div class="text-3xl font-semibold font-sans">Plugging in...</div>
       <button class="btn btn-primary" on:click={handlegoogle}>
         <Icon src={GoogleIcon} /> Sign In With Google
       </button>
