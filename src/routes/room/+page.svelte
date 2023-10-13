@@ -1,6 +1,6 @@
 <script>
     import { db } from "../../firebase1/firebaseConfig";
-    import { doc, setDoc,updateDoc,addDoc,getDoc,onSnapshot} from "firebase/firestore"; 
+    import { doc, setDoc,updateDoc,addDoc,getDoc,onSnapshot,deleteDoc} from "firebase/firestore"; 
     import { getAuth, onAuthStateChanged } from "firebase/auth";
     import { onMount } from "svelte";
     import questions from "../../questions/questions.json"
@@ -149,7 +149,8 @@ onMount(() => {
 			countdown -= 1;}
 	  }, 1000);
 	}) 
-let handlehome = ()=>{
+let handlehome = async()=>{
+    await deleteDoc(doc(db, "room", "one"));
     window.location.href = "dashboard"
 }
 </script>
