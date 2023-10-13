@@ -19,6 +19,7 @@
 </script>
 <style>
     #main{
+        background: linear-gradient(180deg, #2F303A 0%, rgba(47, 48, 58, 0) 72.29%);
         overflow: hidden;
         height: 100vh;
         display: flex;
@@ -46,7 +47,7 @@
             </div>
         </div>
         <div id="sidebar" class="bg-transparent flex flex-row">
-            <div class=" w-24 m-0 flex flex-col gap-y-3 shadow-lg bg-inherit text-white">
+            <div class=" w-24 m-0 flex flex-col gap-y-3 bg-transparent text-white">
                 <div class="h-3"></div>
                 <a href="/dashboard"><SideBarIcons styleid={BsHouseFill} text="Home"></SideBarIcons></a>
                 <SideBarIcons styleid={BsBook} text="Learn"></SideBarIcons>
