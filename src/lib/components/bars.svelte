@@ -32,7 +32,7 @@
         flex-grow: 1;
     }
 </style>
-<main class="select-none">
+<main class="">
     <div id="main" class="h-screen bg-transparent">
         <div id="navbar1" class="bg-white flex flex-row items-center p-3 shadow-2xl">
             <div class="flex-1">
