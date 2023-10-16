@@ -37,15 +37,15 @@
 <div class="flex flex-row grow justify-center">
   <div class="grow flex flex-col">
     <div class="grow grid grid-cols-2 grid-rows-2 my-20 mx-32 gap-5 gap-y-10 place-content-center">
-      <div id="div3" class="flex flex-row items-center" onclick="location.href='/material'">
-        <div class="flex flex-row-reverse grow place-self-stretch" style="background: linear-gradient(250.98deg, #000000 13.93%, rgba(0, 0, 0, 0) 75.78%);
-        ">
+      <div id="div3" class="flex flex-row items-center">
+        <a class="flex flex-row-reverse grow place-self-stretch" style="background: linear-gradient(250.98deg, #000000 13.93%, rgba(0, 0, 0, 0) 75.78%);
+        " href="/material">
           <p class="font-semibold text-4xl text-base-800 m-8 uppercase self-center" style="">course material</p>
-        </div>
+        </a>
         <!-- <img src="{material}" alt="course material"> -->
       </div>
-      <div id="div2" class="flex flex-row-reverse items-center" onclick="location.href='/quiz'"><a class="font-semibold text-4xl text-base-800 m-8" href="/quiz">CHALLENGES</a></div>
-      <div id="div1" class="flex justify-center" onclick="location.href='/leaderboard'"><p class="place-self-center font-semibold text-4xl text-base-800 uppercase">LeaderBoard</p></div>
+      <a id="div2" class="flex flex-row-reverse items-center" href="/quiz"><div class="font-semibold text-4xl text-base-800 m-8">CHALLENGES</div></a>
+      <a id="div1" class="flex justify-center" href="/leaderboard"><p class="place-self-center font-semibold text-4xl text-base-800 uppercase">LeaderBoard</p></a>
     </div>
     <div id="footer" class="self-center text-xl my-3">Developed By Bit Lords</div>
   </div>
