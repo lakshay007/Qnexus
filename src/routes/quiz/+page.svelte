@@ -11,28 +11,19 @@ const user = auth.currentUser;
 let flag = 0;
 const state = doc(db,"gamestate", "one");
 const click = async() =>{
-   await updateDoc(state, {
-  gamestate:1,
-  playercount:flag+1
-  
-});
-flag++;
-window.location.href = "play";  
+    await updateDoc(state, {
+        gamestate:1,
+        playercount:flag+1
+    });
+    flag++;
+    window.location.href = "play";  
 }
-const join = () =>{
-    window.location.href = "join"
-
-}
-
-
-
-
 </script>
 <main>
     <a href="#" on:click={click} >
         play
     </a>
-    <a href="#" on:click={join} >
+    <a href="/join" >
         join
     </a>
 </main>
