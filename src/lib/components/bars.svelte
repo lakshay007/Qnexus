@@ -42,10 +42,10 @@
             </div>
             <div class="flex flex-row gap-4 mx-5 text-black" style="font-family: Merriweather">
                 <div class="btn btn-ghost"><a class="normal-case text-2xl font-semibold" href="/profile">Profile</a></div>
-                <div class="btn btn-ghost"><a class="normal-case text-2xl font-semibold" on:click={handlesignout}>Sign Out</a></div>
+                <div class="btn btn-ghost"><button class="normal-case text-2xl font-semibold" on:click={handlesignout}>Sign Out</button></div>
             </div>
         </div>
-        <div id="sidebar" class="bg-transparent flex flex-row">
+        <div id="sidebar" class="bg-transparent flex flex-row flex-shrink-0">
             <div class=" w-24 m-0 flex flex-col gap-y-3 bg-transparent text-white">
                 <div class="h-3"></div>
                 <a href="/dashboard"><SideBarIcons styleid={BsHouseFill} text="Home"></SideBarIcons></a>
