@@ -26,6 +26,12 @@ const click = async() =>{
     <a href="/join" >
         join
     </a>
+    <a href="/contests" >
+        contest1
+    </a>
+    <a href="/contests" >
+        contest2
+    </a>
 </main>
 
 <style>
