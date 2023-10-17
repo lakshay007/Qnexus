@@ -6,7 +6,7 @@ export default function inView(node) {
 	};
 
 	const root = null;
-	const rootMargin = `0px 0px -50px 0px`;
+	const rootMargin = `0px 0px 225px 0px`;
 	const options = { root, rootMargin };
 	const observer = new IntersectionObserver(handleIntersect, options);
 	observer.observe(node);
