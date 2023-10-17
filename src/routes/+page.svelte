@@ -6,9 +6,7 @@
   import lakshay from '../assets/lakshay.jpg';
   import yashyas from '../assets/yashas.jpg';
   import zaid from '../assets/zaid.jpg';
-  import question from '../assets/question.png';
-  import search from '../assets/search.png';
-  import stairs from '../assets/stair.png';
+  import discoverbg from '../assets/discoverbg.png';
   import Participant from '../lib/components/participant.svelte';
   import QnexusColor from '../assets/q-nexus-logo-light-transparent.png'
   import Discover from '../lib/components/discover.svelte';
@@ -33,17 +31,6 @@
 </script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
-  #ani1 {
-    opacity: 0;
-    filter: blur(2.5px);
-    transform: translateY(100%);
-    transition: all 1s;
-  }
-  #ani1.visi1 {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
   #ani2 {
     opacity: 0;
     filter: blur(2.5px);
@@ -54,6 +41,21 @@
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
+  }
+  .ellipse-1 {
+    background: rgba(120, 53, 205, 0.46);
+    border-radius: 50%;
+    width: 35.8vw;
+    height: 35.8vw;
+    left: 14.2vw;
+    top: 0;
+    position: relative;
+  }
+  #discover {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    height: auto;
   }
 </style>
 <div id="main" class="grid grid-rows-3">
@@ -67,19 +69,9 @@
         <Icon src={GoogleIcon} /> Sign In With Google
       </button>
   </div>
-  <div id="discover" class="flex flex-col items-center justify-center">
-      <div id="ani1"
-      class:visi1
-      use:inView
-      on:intersect={({ detail }) => {
-          visi1 = detail;
-      }}>
-        <div class="flex flex-wrap uppercase gap-9">
-            <Discover src={search} text="search course material"/>
-            <Discover src={question} text="compete with your peers"/>
-            <Discover src={stairs} text="CLIMB THE LEADERBOARD"/>
-        </div>
-      </div>
+  <div id="discover" class="flex flex-col justify-center">
+      <img id="discoverimg" src="{discoverbg}" alt=""/>
+      <div class="ellipse-1"></div>
   </div>
   <div id="about us" class="m-10 flex flex-col items-center gap-14">
       <div>
