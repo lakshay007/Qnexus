@@ -31,9 +31,6 @@
     #sidebar{
         flex-grow: 1;
     }
-    #sidebar_overlay {
-        position: absolute;
-    }
 </style>
 <main class="">
     <div id="main" class="h-screen bg-transparent">
@@ -60,6 +57,5 @@
             </div>
             <slot />
         </div>
-        <div id="sidebar_overlay"></div>
     </div>
 </main>
