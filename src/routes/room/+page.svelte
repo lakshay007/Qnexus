@@ -202,8 +202,8 @@ let handlehome = async()=>{
 {#if pname == name2}
 <h1>your opponent scored: {player1score}</h1>
 {#if player2score<player1score}
-<h1>you lose!!!</h1>
-{:else} <h1>you win!!</h1>
+<h1>You Lost This Round!</h1>
+{:else} <h1>You Won This Round!</h1>
 {/if}
 {/if}
 <button type="button" on:click={handlehome}>go back to dashboard</button>

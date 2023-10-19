@@ -54,6 +54,9 @@ let handlesubmit = async()=>{
 });
   }
 </script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+</style>
 <main class="flex flex-row grow justify-center items-center">
     {#if flag4==0}
     <form action="submit_form.php" method="post" enctype="multipart/form-data" class="grow mx-16 my-0">
@@ -102,13 +105,13 @@ let handlesubmit = async()=>{
             <!-- <label for="userImage">User Image:</label>
             <input type="file" id="userImage" name="userImage" accept="image/*"><br><br> -->
             <div class="flex flex-row justify-center gap-3">
-                <a href="/dashboard"><button type="button" class="btn btn-error">return</button></a>
-                
-                <button type="button" class="btn btn-success" on:click={handlesubmit}>submit</button>
-                
+                {#if flag==1} 
+                    <p class="capitalize text-3xl font-semibold">profile created succesfully! refresh the page to see your profile</p>
+                {:else}
+                    <a href="/dashboard"><button type="button" class="btn btn-error">return</button></a>
+                    <button type="button" class="btn btn-success" on:click={handlesubmit}>submit</button>
+                {/if}
             </div>
-            {#if flag==1} <h1>profile created succesfully! refresh the page to see your profile</h1>
-            {/if}
         </div>
     </form>
    
@@ -127,6 +130,3 @@ let handlesubmit = async()=>{
     </div>
     {/if}
 </main>
-<style>
-
-</style>
