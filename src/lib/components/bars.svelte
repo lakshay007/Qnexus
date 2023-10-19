@@ -1,6 +1,8 @@
 <script>
-    import { getAuth, signOut } from "firebase/auth";
-    import {auth} from "../../firebase1/firebaseConfig";
+    import { getAuth, signOut,onAuthStateChanged } from "firebase/auth";
+    import { onMount } from "svelte";
+    import { db } from "../../firebase1/firebaseConfig";
+    import { doc, setDoc,updateDoc,addDoc,getDoc,onSnapshot,deleteDoc} from "firebase/firestore"; 
     import coin from "../../assets/coin.png";
     import logo from "../../assets/QNexus_Black-removebg-preview.png";
     import SideBarIcons from '$lib/components/SideBarIcons.svelte';
@@ -9,14 +11,25 @@
     import BsHouseFill from 'svelte-icons-pack/bs/BsHouseFill';
     import BsBar from 'svelte-icons-pack/bs/BsBarChartFill';
     import BsCoin from 'svelte-icons-pack/bs/BsCoin';
-    const handlesignout = () =>{ //function for signout
+    let x,ref;
+    const handlesignout = () =>{ 
         signOut(auth).then(() => {     
             window.location.href = "/";
         }).catch((error) => {
             console.log("Error during signout.");
         });
     }
+    const auth = getAuth();
     let coins = 0;
+    onMount(async()=>{
+         coins = 0;
+        onAuthStateChanged(auth, async(user) => {
+        x = doc(db,"playerprofiles", user.uid);
+     ref = await getDoc(x);
+     coins = ref.data().playercoins;
+        })
+
+    })
 </script>
 <style>
     #main{
