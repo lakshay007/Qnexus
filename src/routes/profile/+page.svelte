@@ -3,7 +3,7 @@ import { db } from "../../firebase1/firebaseConfig";
 import { doc, setDoc,updateDoc,getDoc,onSnapshot } from "firebase/firestore"; 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { onMount } from "svelte";
-let year,semester,college,regno,flag = 0,name,coins;
+let year,semester,college,regno,flag = 0,name,coins,credits;
 let flag4 = 0;
 const auth = getAuth();
 onMount(async()=>{
@@ -46,7 +46,8 @@ let handlesubmit = async()=>{
         semester: [semester],
         year: [year],
         regno: [regno],
-        playercoins:1
+        playercoins:1,
+        credits:1
 });
  flag = 1; }
 

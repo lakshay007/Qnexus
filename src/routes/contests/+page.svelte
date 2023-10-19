@@ -1,7 +1,7 @@
 <script>
     import Radio from '../../lib/components/Radio.svelte';
     import { db } from "../../firebase1/firebaseConfig";
-    import { doc, setDoc, updateDoc, addDoc, getDoc, onSnapshot, deleteDoc,collection, query, where,getDocs } from "firebase/firestore";
+    import { doc , setDoc, updateDoc, addDoc, getDoc, onSnapshot, deleteDoc,collection, query, where,getDocs, increment } from "firebase/firestore";
     import { getAuth, onAuthStateChanged } from "firebase/auth";
     import { onMount } from "svelte";
     import questions2 from "../../questions/questions2.json";
@@ -15,13 +15,20 @@
           use = user.uid;
           await setDoc(doc(db, "contest1", user.uid), {
             "playername": user.displayName,
-            "uid": user.uid
+            "uid": user.uid,
+            "credits":0,
+            "markscoef":0,
+            "revrank":0,
+            "relcoef":0,
+            "totalcred":50
+        
+
           });
         }
       });
   
-      const unsubscribe = onSnapshot(doc(db, "contest1", "meta"), async (doc) => {
-        onstate = doc.data().state;
+      const unsubscribe = onSnapshot(doc(db, "contest1", "meta"), async (docrefff) => {
+        onstate = docrefff.data().state;
         if (onstate == 1) {
            let countdown = 1200;
           const timer = setInterval(() => {
@@ -34,30 +41,65 @@
             }
           }, 1000);
         }
-        if(doc.data().state==-1){
+        if(docrefff.data().state==-1){
             console.log("ended");
             let docref = collection(db, "contest1");
             const q = query(docref,where("correctans",">=",0) );
-            const dataArray = []; // Create an empty array to store document data
+            const dataArray = []; 
 
 getDocs(q)
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      dataArray.push(doc.data());
+  .then(async(querySnapshot) => {
+    querySnapshot.forEach((docreff) => {
+      dataArray.push(docreff.data());
     });
 
+
+    for(let l = 0;l<dataArray.length-1;l++){
+        for(let j=0;j<dataArray.length-l-1;j++){
+            if(dataArray[j].correctans<dataArray[j+1].correctans){
+                let temp = dataArray[j];
+                dataArray[j] = dataArray[j+1];
+                dataArray[j+1] = temp;
+            }
+
+
+        }
+
+    }
     console.log("All data:", dataArray);
+    let hiMarks = dataArray[0].correctans;
+    let ranks = dataArray.length;
+    for(let x = 0;x<dataArray.length;x++){
+        dataArray[x].markscoef = dataArray[x].correctans/hiMarks;
+        dataArray[x].revrank = ranks--;
+    }
+    for(let x = 0;x<dataArray.length;x++){
+        dataArray[x].relcoef = dataArray[x].revrank/dataArray.length;
+    }
+    for(let x = 0;x<dataArray.length;x++){
+        dataArray[x].credits = Math.floor((Math.pow(dataArray[x].markscoef,0.5)* Math.pow(dataArray[x].relcoef,0.5)*50));
+
+    }
+    for(let j = 0;j<dataArray.length;j++){
+
+    await setDoc(doc(db, "playerprofiles",dataArray[j].uid), {
+        "playercoins": increment(dataArray[j].credits),
+        "credits":increment(dataArray[j].credits)
+    },{merge:true})
+}
+    
+
   })
         }});
 
       
     });
-  
+
     let group = 0;
   
     let handleNext = async () => {
       if (questions2[i].CorrectOption == group) {
-        correctans++;
+        correctans = correctans+5;
         await setDoc(doc(db, "contest1", use), {
           "correctans": correctans
         },{merge:true});
