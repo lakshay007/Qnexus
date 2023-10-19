@@ -52,7 +52,7 @@
                 <a href="/dashboard"><SideBarIcons styleid={BsHouseFill} text="Home"></SideBarIcons></a>
                 <a href="/material"><SideBarIcons styleid={BsBook} text="Learn"></SideBarIcons></a>
                 <a href="/quiz"><SideBarIcons styleid={BsJoystick} text="Compete"></SideBarIcons></a>
-                <a href="/material"><SideBarIcons styleid={BsCoin} text="Store"></SideBarIcons></a>
+                <a href="/store"><SideBarIcons styleid={BsCoin} text="Store"></SideBarIcons></a>
                 <a href="/leaderboard"><SideBarIcons styleid={BsBar} text="LeaderBoard"></SideBarIcons></a>
             </div>
             <slot />
