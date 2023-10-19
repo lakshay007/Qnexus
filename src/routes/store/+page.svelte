@@ -3,6 +3,31 @@
     let current = 0;
     import money from "../../assets/money.png";
     import coin from "../../assets/coin.png"
+    import { db } from "../../firebase1/firebaseConfig";
+    import { doc, setDoc,updateDoc,addDoc,getDoc,onSnapshot,deleteDoc} from "firebase/firestore"; 
+    import { getAuth, onAuthStateChanged } from "firebase/auth";
+    import { onMount } from "svelte";
+    let redval,notenoughcoins;
+    let handleredeem = async()=>{
+        onAuthStateChanged(auth, async(user) => {
+  if (user) { 
+        x = doc(db,"playerprofiles", user.uid);
+     ref = await getDoc(x);
+     if(ref.data().playercoins>=redval){
+        notenoughcoins = 0;
+        let newcoins=ref.data().playercoins-redval;
+        setDoc(x, {
+       playercoins: [newcoins]
+},{ merge: true });
+     }
+     else{
+        notenoughcoins = 1;
+     }
+
+  }
+})
+
+    }
 </script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
