@@ -146,7 +146,7 @@ await getDocs(q)
       {/if}
     {/if}
     {#if onstate == -1}
-      <h1>quiz has ended</h1>
+      <h1>quiz has ended, results will be reflected on the leaderboard shortly</h1>
     {/if}
     {#if onstate == 0}
       <h1>waiting for contest to start</h1>
