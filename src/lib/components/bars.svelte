@@ -4,10 +4,11 @@
     
     import logo from "../../assets/QNexus_Black-removebg-preview.png";
     import SideBarIcons from '$lib/components/SideBarIcons.svelte';
-    import BsBook from 'svelte-icons-pack/bs/BsBookFill';
+    import BsBook from 'svelte-icons-pack/bs/BsBookHalf';
     import BsJoystick from 'svelte-icons-pack/bs/BsJoystick';
     import BsHouseFill from 'svelte-icons-pack/bs/BsHouseFill';
     import BsBar from 'svelte-icons-pack/bs/BsBarChartFill';
+    import BsCoin from 'svelte-icons-pack/bs/BsCoin';
     const handlesignout = () =>{ //function for signout
         signOut(auth).then(() => {     
             window.location.href = "/";
@@ -46,11 +47,12 @@
             </div>
         </div>
         <div id="sidebar" class="bg-transparent flex flex-row flex-shrink-0">
-            <div class=" w-24 m-0 flex flex-col gap-y-3 bg-transparent text-white">
-                <div class="h-3"></div>
+            <div class=" w-[6.25vw] m-0 flex flex-col gap-y-[3vh] bg-transparent text-white">
+                <div class="h-[3vh]"></div>
                 <a href="/dashboard"><SideBarIcons styleid={BsHouseFill} text="Home"></SideBarIcons></a>
                 <a href="/material"><SideBarIcons styleid={BsBook} text="Learn"></SideBarIcons></a>
                 <a href="/quiz"><SideBarIcons styleid={BsJoystick} text="Compete"></SideBarIcons></a>
+                <a href="/material"><SideBarIcons styleid={BsCoin} text="Store"></SideBarIcons></a>
                 <a href="/leaderboard"><SideBarIcons styleid={BsBar} text="LeaderBoard"></SideBarIcons></a>
             </div>
             <slot />

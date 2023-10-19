@@ -36,11 +36,11 @@
 </style>
 <div class="flex flex-row grow justify-center">
   <div class="grow flex flex-col">
-    <div class="grow grid grid-cols-2 grid-rows-2 my-20 mx-32 gap-5 gap-y-10 place-content-center">
+    <div class="grow grid grid-cols-2 grid-rows-2 my-[8vh] mx-[8vw] gap-x-[2vw] gap-y-[5vh] place-content-center">
       <div id="div3" class="flex flex-row items-center">
         <a class="flex flex-row-reverse grow place-self-stretch" style="background: linear-gradient(250.98deg, #000000 13.93%, rgba(0, 0, 0, 0) 75.78%);
         " href="/material">
-          <p class="font-semibold text-4xl text-base-800 m-8 uppercase self-center" style="">course material</p>
+          <p class="font-semibold text-4xl text-base-800 m-[2vw] uppercase self-center" style="">course material</p>
         </a>
         <!-- <img src="{material}" alt="course material"> -->
       </div>

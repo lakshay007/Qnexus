@@ -20,9 +20,9 @@ const click = async() =>{
 }
 </script>
 <main>
-    <a href="#" on:click={click} >
+    <button on:click={click} >
         play
-    </a>
+    </button>
     <a href="/join" >
         join
     </a>
