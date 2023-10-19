@@ -5,10 +5,13 @@
     import { getAuth, onAuthStateChanged } from "firebase/auth";
     import { onMount } from "svelte";
     import questions2 from "../../questions/questions2.json";
+    let awaitime = 0;
+    const dataArray = []; 
+    let cnttt=0;
   
     const auth = getAuth();
     let use, x, ref, formattedTime, timerloaded = 0, i = 0, attempted = 0, notatte = 0, correctans = 0, end = 0, onstate;
-  
+  let yoid;
     onMount(async () => {
       onAuthStateChanged(auth, async (user) => {
         if (user) {
@@ -27,7 +30,7 @@
         }
       });
   
-      const unsubscribe = onSnapshot(doc(db, "contest1", "meta"), async (docrefff) => {
+      let unsubscribe = onSnapshot(doc(db, "contest1", "meta"), async (docrefff) => {
         onstate = docrefff.data().state;
         if (onstate == 1) {
            let countdown = 1200;
@@ -45,13 +48,16 @@
             console.log("ended");
             let docref = collection(db, "contest1");
             const q = query(docref,where("correctans",">=",0) );
-            const dataArray = []; 
+            
 
-getDocs(q)
+await getDocs(q)
   .then(async(querySnapshot) => {
-    querySnapshot.forEach((docreff) => {
-      dataArray.push(docreff.data());
-    });
+    querySnapshot.forEach(async(docreff) => {
+      dataArray.push( docreff.data());
+      console.log("ho");
+      
+   unsubscribe(); });
+})
 
 
     for(let l = 0;l<dataArray.length-1;l++){
@@ -66,10 +72,11 @@ getDocs(q)
         }
 
     }
-    console.log("All data:", dataArray);
+    
     let hiMarks = dataArray[0].correctans;
     let ranks = dataArray.length;
     for(let x = 0;x<dataArray.length;x++){
+        if(dataArray[x].uid == use) yoid = x;
         dataArray[x].markscoef = dataArray[x].correctans/hiMarks;
         dataArray[x].revrank = ranks--;
     }
@@ -80,20 +87,25 @@ getDocs(q)
         dataArray[x].credits = Math.floor((Math.pow(dataArray[x].markscoef,0.5)* Math.pow(dataArray[x].relcoef,0.5)*50));
 
     }
-    for(let j = 0;j<dataArray.length;j++){
-
-    await setDoc(doc(db, "playerprofiles",dataArray[j].uid), {
-        "playercoins": increment(dataArray[j].credits),
-        "credits":increment(dataArray[j].credits)
-    },{merge:true})
-}
+    console.log("All data:", dataArray);
+    update();
     
-
-  })
         }});
 
       
     });
+    const update = async() =>{
+        cnttt++;
+        if(cnttt===1){
+            console.log(yoid);
+            console.log(dataArray[yoid].credits);
+               await setDoc(doc(db, "playerprofiles", use), {
+                "credits": increment(dataArray[yoid].credits),
+                "playercoins": increment(dataArray[yoid].credits)
+                },{merge:true});
+            
+        }
+    }
 
     let group = 0;
   
