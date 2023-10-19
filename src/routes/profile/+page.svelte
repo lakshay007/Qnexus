@@ -105,10 +105,10 @@ let handlesubmit = async()=>{
                 <a href="/dashboard"><button type="button" class="btn btn-error">return</button></a>
                 
                 <button type="button" class="btn btn-success" on:click={handlesubmit}>submit</button>
-                {#if flag==1} <h1><br><br>profile created succesfully! refresh the page to see your profile</h1>
-                {/if}
                 
             </div>
+            {#if flag==1} <h1>profile created succesfully! refresh the page to see your profile</h1>
+            {/if}
         </div>
     </form>
    
