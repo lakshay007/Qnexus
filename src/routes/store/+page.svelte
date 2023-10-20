@@ -5,6 +5,9 @@
     import coin from "../../assets/coin.png"
     import StorePart from "../../lib/components/storePart.svelte";
     import coupon from "../../assets/coupon.jpg";
+    import food from "../../assets/foodcoupon.jpg";
+    import tshirt from "../../assets/mitTshirt.jpg";
+    import hoodie from "../../assets/mitHoodie.jpg";
 
 </script>
 <style>
@@ -25,8 +28,8 @@
     </div>
     <div class="flex flex-row flex-wrap m-[5vw] gap-[2vw]">
         <StorePart  image={coupon} text="Coupon at max" price="100"></StorePart>
-        <StorePart image={coupon} text="Coupon at max"  price="100"></StorePart>
-        <StorePart image={coupon} text="Coupon at max"  price="100"></StorePart>
-        <StorePart image={coupon} text="Coupon at max"  price="100"></StorePart>
+        <StorePart image={food} text="Food Coupon FC"  price="300"></StorePart>
+        <StorePart image={tshirt} text="MIT TShirt"  price="700"></StorePart>
+        <StorePart image={hoodie} text="MIT Hoodie"  price="1000"></StorePart>
     </div>
 </main>
