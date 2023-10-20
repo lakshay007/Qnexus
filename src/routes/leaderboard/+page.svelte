@@ -74,7 +74,7 @@ import coin from "../../assets/coin.png";
             {:else}
             <div class=" flex flex-col mx-2 my-3 gap-2">
                 <div class="flex flex-row">
-                    <p class="text-white font-bold font-['MerriWeather']">Rank: </p>
+                    <p class="text-white font-bold font-['MerriWeather']">Name: </p>
                     <div class="grow"></div>
                     <div class="text-white font-bold font-['MerriWeather']">{yoid}</div>
                 </div>
