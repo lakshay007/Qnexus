@@ -3,6 +3,34 @@
     export let text = "Hello";
     export let price = 0;
     import coin from "../../assets/coin.png";
+    import { db } from "../../firebase1/firebaseConfig";
+    import { doc, setDoc,updateDoc,addDoc,getDoc,onSnapshot,deleteDoc} from "firebase/firestore"; 
+    import { getAuth, onAuthStateChanged } from "firebase/auth";
+    import { onMount } from "svelte";
+    let redval,notenoughcoins,x,ref;
+    const auth = getAuth();
+    let handleredeem = async()=>{
+        onAuthStateChanged(auth, async(user) => {
+  if (user) { 
+        x = doc(db,"playerprofiles", user.uid);
+     ref = await getDoc(x);
+     if(ref.data().playercoins>=redval){
+        alert("purchase successful");
+        notenoughcoins = 0;
+        let newcoins=ref.data().playercoins-redval;
+        setDoc(x, {
+       playercoins: newcoins
+},{ merge: true });
+     }
+     else{
+        notenoughcoins = 1;
+     }
+
+  }
+})
+
+    }
+    $: redval = price;
 </script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
@@ -24,6 +52,6 @@
         <p class="text-[1.25vw] text-white">{price}</p>
     </div>
     <div>
-        <button class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
+        <button on:click={handleredeem} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
     </div>
 </div>

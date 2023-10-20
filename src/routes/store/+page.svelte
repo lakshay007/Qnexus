@@ -5,6 +5,7 @@
     import coin from "../../assets/coin.png"
     import StorePart from "../../lib/components/storePart.svelte";
     import coupon from "../../assets/coupon.jpg";
+
 </script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
@@ -23,9 +24,9 @@
         </div>
     </div>
     <div class="flex flex-row flex-wrap m-[5vw] gap-[2vw]">
-        <StorePart image={coupon} text="Coupon at max" price="100"></StorePart>
-        <StorePart image={coupon} text="Coupon at max" price="100"></StorePart>
-        <StorePart image={coupon} text="Coupon at max" price="100"></StorePart>
-        <StorePart image={coupon} text="Coupon at max" price="100"></StorePart>
+        <StorePart  image={coupon} text="Coupon at max" price="100"></StorePart>
+        <StorePart image={coupon} text="Coupon at max"  price="100"></StorePart>
+        <StorePart image={coupon} text="Coupon at max"  price="100"></StorePart>
+        <StorePart image={coupon} text="Coupon at max"  price="100"></StorePart>
     </div>
 </main>

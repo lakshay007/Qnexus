@@ -3,6 +3,7 @@
     import { doc, setDoc,updateDoc,addDoc,getDoc,onSnapshot} from "firebase/firestore"; 
     import { getAuth, onAuthStateChanged } from "firebase/auth";
     import { onMount } from "svelte";
+    let handleCopy;
     
     const cnt = doc(db,"gamestate", "one");
     const pc = cnt.playercount;
@@ -27,7 +28,11 @@ onSnapshot(doc(db, "room", "one"), async(doc) => {
 window.location.href = "room";  }
 });
 } 
+ handleCopy = ()=>{
+  navigator.clipboard.writeText(user.uid);
+}
 });
+
 
 </script>
 
@@ -35,6 +40,7 @@ window.location.href = "room";  }
     {#if shh1==true}
     <h1>your invite code is:</h1>
     <h3>{uid}</h3>
+    <button type="button" on:click={handleCopy}>copy</button>
     {/if}
 
 

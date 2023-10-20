@@ -14,6 +14,7 @@ import { doc , setDoc, updateDoc, addDoc, getDoc, onSnapshot, deleteDoc,collecti
         .then(async(querySnapshot) => {
         querySnapshot.forEach(async(docreff) => {
         data.push( docreff.data());
+    });
         for(let i = 0;i<data.length-1;i++){
             for(let j = 0;j<data.length-i-1;j++){
                 if(data[j].credits<data[j+1].credits){
@@ -23,12 +24,14 @@ import { doc , setDoc, updateDoc, addDoc, getDoc, onSnapshot, deleteDoc,collecti
                 }
             }
         }
+        console.log(data);
+
       
-   });
+   
    dataArray.set(data);
 })
 
-    console.log(dataArray)})
+})
 
 </script>
 <main>
