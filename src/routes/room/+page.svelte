@@ -4,6 +4,8 @@
     import { getAuth, onAuthStateChanged } from "firebase/auth";
     import { onMount } from "svelte";
     import questions from "../../questions/questions.json"
+    import roomimg from "../../assets/room.png";
+    import quizend from "../../assets/quizend.gif";
     let attempted = 0;
     let notattempted = 0;
     let namef1,namef2;
@@ -133,9 +135,9 @@ let handleNext = () =>{
     cnt++;
     if(cnt>=11){
             setDoc(x, {
-       [finished]: 1
-},{ merge: true });
-        }
+                [finished]: 1
+            },{ merge: true });
+    }
 }
 if(i==9) end = 1;
 let countdown = 15;
@@ -153,64 +155,142 @@ let handlehome = async()=>{
     await deleteDoc(doc(db, "room", "one"));
     window.location.href = "dashboard"
 }
+    
+    
 </script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo&family=Kaisei+Tokumin:wght@500&family=Merriweather&family=Share+Tech+Mono&display=swap');
+    #roomimg {
+        width: 18vw;
+        height: auto;
+        position:absolute;
+        z-index: -1;
+    }
+    #counter {
+        position: absolute;
+        background-color: #85C07C;
+        height: 11.66666vw;
+        width: 11.66666vw;
+        border-radius: 9999px;
+        top: 39vh;
+        left: 3vw;
+        font-family: 'Share Tech Mono';
+        font-size: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        --tw-text-opacity: 1;
+        color: rgb(0 0 0 / var(--tw-text-opacity));
+        background-color: #85C07C;
+    }
+
+    #questionNo {
+        font-family: 'Share Tech Mono';
+    }
+
+    #question {
+        font-family: 'Kaisei Tokumin';
+    }
+
+    #options {
+        font-family: 'Kaisei Tokumin';
+    }
+
+    #stats {
+        font-family: 'Share Tech Mono';
+    }
+    #quizend {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
 <main>
     {#if cnt<11}
-{#if flag==0}
-<h1>waiting for both players to be connected</h1>
-{/if}
-{#if flag==1}
-<h1>both players connected, starting the game</h1>
-{/if}
-{#if flag==3}
-<h1>{countdown}</h1>
-<h1>question number: {i+1}</h1>
-<h1>{questions[i].question}</h1>
-<a href="#" on:click={func1}>a. {questions[i].option1}</a> <br> 
-<a href="#" on:click={func2}>b. {questions[i].option2}</a><br>
-<a href="#" on:click={func3}>c. {questions[i].option3}</a><br>
-<a href="#" on:click={func4}>d. {questions[i].option4}</a><br>
-{#if cnt==10}
-<button type="button" on:click={handleNext}>end quiz</button>
-{:else}
-<button type="button" on:click={handleNext}>next</button>
-{/if}
-  
-    <h3>attempted: {attempted}</h3>
-    <h3>skipped: {notattempted}</h3>
-{/if}
-{/if}
-{#if cnt>=11}
-<h1>quiz has ended</h1>
-<h1>your results:</h1>
-<h2>questions attempted: {attempted}</h2>
-<h2>correct answers: {ans}</h2>
-<h2>question not attempted: {notattempted}</h2>
-{#if bothfinished==0 }
-<h1>waiting for opponent to finish</h1>
-{/if}
+        {#if flag==0}
+            <div class="h-screen w-screen flex flex-col justify-center items-center gap-4">
+                <span class="loading loading-spinner loading-lg"></span>
+                <p class="capitalize text-4xl font-['MerriWeather']">Waiting for both players to be connected</p>
+            </div>
+        {/if}
+        {#if flag==1}
+            <div class="h-screen w-screen flex flex-col justify-center items-center gap-4">
+                <p class="capitalize text-4xl font-['MerriWeather']">both players connected, starting the game</p>
+            </div>
+        {/if}
+        {#if flag==3}
+            <div class="h-screen w-screen flex flex-row grow items-center">
+                <div class="flex flex-col h-screen items-start justify-end">
+                    <div id="counter">
+                    <!-- class:bg-[#85BF7B]={countdown > 7}
+                    class:bg-[#ffa500]={countdown <= 7 && countdown > 4}
+                    class:bg-[#ff0000]={countdown < 4} -->
+                        <p>{countdown}</p>
+                        <p class="text-[1.75vw]">SEC</p>
+                    </div>
+                    <img id="roomimg" src={roomimg} alt="" class=""/>
+                </div>
+                <div class="grow flex flex-col items-center">
+                    <div id="questionNo" class="bg-[#D0F3FF] rounded-full mb-[3vh] w-[15vw]">
+                        <div class="mx-[1vw] text-center text-black text-[2vw] font-normal font-['Share Tech Mono'] ">question: {i+1}</div>
+                    </div>
+                    <div id="question" class="text-white font-semibold text-[3vw] max-w-3xl">{questions[i].question}</div>
+                    <div id="options" class="text-white font-medium text-[2vw] flex flex-col text-right p-8 ml-8 items-start">
+                        <button id="option1" on:click={func1}>A. {questions[i].option1}</button>
+                        <button id="option2" on:click={func2}>B. {questions[i].option2}</button>
+                        <button id="option3" on:click={func3}>C. {questions[i].option3}</button>
+                        <button id="option4" on:click={func4}>D. {questions[i].option4}</button>
+                    </div>
+                    <div id="stats" class="flex flex-row gap-[3.5vw] m-5 text-[1.75vw]">
+                        <div id="attempted" class="text-[#D0F3FF]">attempted: {attempted}</div>
+                        <div id="not" class="text-[#D0F3FF]">skipped: {notattempted}</div>
+                        {#if cnt==10}
+                            <button type="button" class="btn btn-error btn-sm lowercase text-[1.75vw] w-[9.75vw]" style="font-family: 'Share Tech Mono';" on:click={handleNext}>&lt;end&gt;</button>
+                        {:else}
+                            <button type="button" class="btn btn-success btn-sm lowercase text-[1.75vw] w-[9.75vw]" style="font-family: 'Share Tech Mono';" on:click={handleNext}>&lt;next&gt;</button>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        {/if}
+    {/if}
+    {#if cnt>=11}
+        <div class="h-screen w-screen flex flex-row grow items-center bg-[#171717] ">
+            <div class="flex flex-col w-[50vw] h-screen items-center justify-center ">
+                <img id="quizend" src={quizend} alt="cow" class="" />
+            </div>
+            <div class="grow flex flex-col h-screen items-center justify-center gap-y-5">
+                <div class="w-[26.4vw] text-center text-cyan-100 text-6xl font-normal" style="font-family:'Share Tech Mono'">QUIZ HAS ENDED</div>
+                <div class="text-center text-cyan-100 text-[2.08333vw] font-normal" style="font-family:'Share Tech Mono'">your results:</div>
+                <div class="text-center text-white text-4xl font-normal" style="font-family:'Share Tech Mono'">questions attempted: {attempted}</div>
+                <div class="text-center text-white text-4xl font-normal" style="font-family:'Share Tech Mono'">correct answers: {ans}</div>
+                <div class="text-center text-white text-4xl font-normal" style="font-family:'Share Tech Mono'">questions unattempted: {notattempted}</div>
+                {#if bothfinished==0 }
+                    <div class="text-center text-[#85BF7B] text-4xl font-normal" style="font-family:'Share Tech Mono'">WAITING FOR OPPONENT TO FINISH</div>
+                {/if}
 
-{#if bothfinished==1 }
-<h1>both players have finished</h1>
-{#if pname == name1}
-<h1>your opponent scored: {player2score}</h1>
-{#if player2score>player1score}
-<h1>you lose!!!</h1>
-{:else} <h1>you win!!</h1>
-{/if}
-{/if}
-{#if pname == name2}
-<h1>your opponent scored: {player1score}</h1>
-{#if player2score<player1score}
-<h1>You Lost This Round!</h1>
-{:else} <h1>You Won This Round!</h1>
-{/if}
-{/if}
-<button type="button" on:click={handlehome}>go back to dashboard</button>
-{/if}
-{/if}
-
+                {#if bothfinished==1 }
+                    <div class="text-center text-[#85BF7B] text-4xl font-normal" style="font-family:'Share Tech Mono'">BOTH PLAYERS HAVE FINISHED</div>
+                    {#if pname == name1}
+                        <div class="text-center text-white text-4xl font-normal" style="font-family:'Share Tech Mono'">your opponent has scored: {player2score}</div>
+                        {#if player2score>player1score}
+                            <div class="text-center text-cyan-100 text-4xl font-extrabold" style="font-family:'Exo'">YOU LOSE!</div>
+                        {:else} 
+                            <div class="text-center text-cyan-100 text-4xl font-extrabold" style="font-family:'Exo'">YOU WIN!</div>
+                        {/if}
+                    {/if}
+                    {#if pname == name2}
+                        <div class="text-center text-white text-4xl font-normal" style="font-family:'Share Tech Mono'">your opponent has scored: {player1score}</div>
+                        {#if player2score<player1score}
+                            <div class="text-center text-cyan-100 text-4xl font-extrabold" style="font-family:'Exo'">YOU LOSE!</div>
+                        {:else} 
+                            <div class="text-center text-cyan-100 text-4xl font-extrabold" style="font-family:'Exo'">YOU WIN!</div>
+                        {/if}
+                    {/if}
+                    <button type="button" class="btn btn-error btn-sm lowercase text-[1.75vw] w-[25vw]" style="font-family: 'Share Tech Mono';" on:click={handlehome}>GO BACK TO DASHBOARD</button>
+                {/if}
+            </div>
+        </div>  
+    {/if}
 </main>
-<style>
-
-</style>
