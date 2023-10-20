@@ -37,7 +37,7 @@ window.location.href = "room";  }
 
 <main class="grow flex flex-col justify-center items-center gap-5">
     {#if shh1==true}
-    <p class="lowercase text-6xl text-[#FDB6B6]" style="font-family: 'Share Tech Mono';">&lt;your link&gt;</p>
+    <p class="lowercase text-6xl text-[#FDB6B6]" style="font-family: 'Share Tech Mono';">&lt;your code&gt;</p>
     <div class="flex flex-row gap-x-10 items-center">
       <p class="bg-slate-300 p-5 text-black text-2xl">{uid}</p>
       <button type="button" class="btn btn-circle btn-outline" on:click={handleCopy}>

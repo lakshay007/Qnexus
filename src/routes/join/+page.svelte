@@ -40,7 +40,7 @@ setTimeout(() => {
 </script>
 
 <main class="grow flex flex-col justify-center items-center gap-5">
-    <label for="room" class=" label lowercase text-6xl text-[#FDB6B6]" style="font-family: 'Share Tech Mono';">&lt;enter your code&gt;</label>
+    <label for="room" class=" label lowercase text-6xl text-[#FDB6B6]" style="font-family: 'Share Tech Mono';">&lt;enter the room code&gt;</label>
     <div class="join shadow-3xl">
         <input class="input input-bordered join-item w-[30vw]" style="--tw-border-opacity: 0.4;" bind:value = {id} placeholder="Code">
         <button type="button" class="btn join-item" on:click={handleButtonClick}>submit</button>
