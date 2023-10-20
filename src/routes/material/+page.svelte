@@ -41,7 +41,7 @@
 
             </a>
             <a class="w-[48.54vw] h-[20vh] bg-[#796060] rounded-xl relative right-[7vw] z-0 flex flex-row-reverse" href="/coursemat">
-                <div class="m-[1vw] w-[16vw] justify-self-center text-center ">
+                <div class="m-[1vw] w-[16vw] justify-self-center text-center place-self-center">
                     <div class="text-black font-medium">
                         Here you will be able to access matrial provided to you  by your instructor
                     </div>
@@ -52,7 +52,7 @@
                 <div class="w-[0.25vw] bg-black">
     
                 </div>
-                <p class="text-black text-[3vw] w-[15vw] text-right mr-[3vw]" style="font-family:'Ruslan Display';">
+                <p class="text-black text-[3vw] w-[15vw] text-right mr-[3vw] place-self-center" style="font-family:'Ruslan Display';">
                     Access Material
                 </p>
             </a>
@@ -70,7 +70,7 @@
                 <div class="w-[0.25vw] bg-black">
     
                 </div>
-                <p class="text-black text-[3vw] w-[15vw] text-left ml-[3vw]" style="font-family:'Ruslan Display';">
+                <p class="text-black text-[3vw] w-[15vw] text-left ml-[3vw] place-self-center" style="font-family:'Ruslan Display';">
                     Assess yourself
                 </p>
             </a>
