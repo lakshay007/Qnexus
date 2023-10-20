@@ -1,8 +1,8 @@
 <script>
-
+    import study from "../../assets/study.png";
 </script>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Acme&family=DM+Sans:opsz@9..40&family=K2D&family=Kaisei+Tokumin&family=Karma:wght@500&family=KoHo:wght@500&family=Merriweather&family=Offside&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Acme&family=DM+Sans:opsz@9..40&family=Exo&family=K2D&family=Kaisei+Tokumin&family=Karma:wght@500&family=KoHo:wght@500&family=Merriweather&family=Offside&family=Ruslan+Display&display=swap');
     #material {
         background: url("../../assets/material.png"), linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1));
         background-size: auto 100%;
@@ -17,16 +17,10 @@
             STUDY MATERIAL
         </div>
     </div>
-    <div id="study" class="">
-        <div id="circle" class="rounded-full ">
-            help
-        </div>
-        <div id="content">
-            me
-        </div>
-        <a href="/coursemat">access material</a>
-    </div>
-    <div id="assess">
-        <a href="#">assess yourself</a>
-    </div>
+    <a href="/coursemat" id="study" class="flex flex-row bg-slate-500">
+        course material
+    </a>
+    <a href="/assess" id="assess" class="flex flex-row bg-blue-500">
+        assess yourself
+    </a>
 </main>
