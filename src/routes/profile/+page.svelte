@@ -117,11 +117,6 @@ let handlesubmit = async()=>{
    
     {/if}
     {#if flag4 == 1}
-    <!-- <h1>name: {name} <br>
-    semester: {semester} <br>
-    college: {college} <br>
-    year: {year}<br>
-    coins: {coins} </h1> -->
     <div class="space-y-[2rem] flex flex-col m-5 bg-gray-900 shadow rounded p-8 sm:p-12 items-center">
         <div>Name: {name}</div>
         <div>Semester: {semester}</div>

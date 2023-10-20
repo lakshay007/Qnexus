@@ -39,10 +39,12 @@ setTimeout(() => {
   }
 </script>
 
-<main>
-    <label>enter your code:</label><br>
-    <input bind:value = {id}><br>
-    <button type="button" on:click={handleButtonClick}>submit</button>
+<main class="grow flex flex-col justify-center items-center gap-5">
+    <label for="room" class=" label lowercase text-6xl text-[#FDB6B6]" style="font-family: 'Share Tech Mono';">&lt;enter your code&gt;</label>
+    <div class="join shadow-3xl">
+        <input class="input input-bordered join-item w-[30vw]" style="--tw-border-opacity: 0.4;" bind:value = {id} placeholder="Code">
+        <button type="button" class="btn join-item" on:click={handleButtonClick}>submit</button>
+    </div>
     {#if flag==true}
     <h1>success, joining the room</h1>
     {/if}
@@ -54,5 +56,5 @@ setTimeout(() => {
 </main>
 
 <style>
-
+    @import url('https://fonts.googleapis.com/css2?family=Exo&family=Kaisei+Tokumin:wght@500&family=Merriweather&family=Share+Tech+Mono&display=swap');
 </style>
