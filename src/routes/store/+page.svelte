@@ -3,33 +3,6 @@
     let current = 200;
     import money from "../../assets/money.png";
     import coin from "../../assets/coin.png"
-
-    import { db } from "../../firebase1/firebaseConfig";
-    import { doc, setDoc,updateDoc,addDoc,getDoc,onSnapshot,deleteDoc} from "firebase/firestore"; 
-    import { getAuth, onAuthStateChanged } from "firebase/auth";
-    import { onMount } from "svelte";
-    let redval,notenoughcoins;
-    let handleredeem = async()=>{
-        onAuthStateChanged(auth, async(user) => {
-  if (user) { 
-        x = doc(db,"playerprofiles", user.uid);
-     ref = await getDoc(x);
-     if(ref.data().playercoins>=redval){
-        notenoughcoins = 0;
-        let newcoins=ref.data().playercoins-redval;
-        setDoc(x, {
-       playercoins: [newcoins]
-},{ merge: true });
-     }
-     else{
-        notenoughcoins = 1;
-     }
-
-  }
-})
-
-    }
-
     import StorePart from "../../lib/components/storePart.svelte";
     import coupon from "../../assets/coupon.jpg";
 
@@ -51,9 +24,9 @@
         </div>
     </div>
     <div class="flex flex-row flex-wrap m-[5vw] gap-[2vw]">
-        <StorePart image={coupon} text="Coupon at max" price="100"></StorePart>
-        <StorePart image={coupon} text="Coupon at max" price="100"></StorePart>
-        <StorePart image={coupon} text="Coupon at max" price="100"></StorePart>
-        <StorePart image={coupon} text="Coupon at max" price="100"></StorePart>
+        <StorePart  image={coupon} text="Coupon at max" price="100"></StorePart>
+        <StorePart image={coupon} text="Coupon at max"  price="100"></StorePart>
+        <StorePart image={coupon} text="Coupon at max"  price="100"></StorePart>
+        <StorePart image={coupon} text="Coupon at max"  price="100"></StorePart>
     </div>
 </main>
