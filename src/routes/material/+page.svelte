@@ -27,6 +27,6 @@
         <a href="/coursemat">access material</a>
     </div>
     <div id="assess">
-        <a href="#">assess yourself</a>
+        <a href="/assess">assess yourself</a>
     </div>
 </main>
