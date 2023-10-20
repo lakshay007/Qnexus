@@ -3,7 +3,7 @@
       export let value = undefined;
   </script>
   <label>
-    <input type="radio" bind:group value={value} class="my-super-special-classname">
+    <input type="radio" bind:group value={value} class="my-super-special-classname radio">
       <slot />
   </label>
   

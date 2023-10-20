@@ -172,7 +172,6 @@ let handlehome = async()=>{
     }
     #counter {
         position: absolute;
-        background-color: #85C07C;
         height: 11.66666vw;
         width: 11.66666vw;
         border-radius: 9999px;
@@ -186,7 +185,6 @@ let handlehome = async()=>{
         justify-content: center;
         --tw-text-opacity: 1;
         color: rgb(0 0 0 / var(--tw-text-opacity));
-        background-color: #85C07C;
     }
 
     #questionNo {
@@ -209,6 +207,20 @@ let handlehome = async()=>{
         height: 100%;
         object-fit: cover;
     }
+    .option-selected-ans {
+        background: white;
+        color: black;
+        border-radius: 5px;
+    }
+    .countdown-red {
+        background-color: #ff0000;
+    }
+    .countdown-orange {
+        background-color: #ffa500;
+    }
+    .countdown-green {
+        background-color: #85BF7B;
+    }
 </style>
 <main>
     {#if cnt<11}
@@ -226,10 +238,10 @@ let handlehome = async()=>{
         {#if flag==3}
             <div class="h-screen w-screen flex flex-row grow items-center">
                 <div class="flex flex-col h-screen items-start justify-end">
-                    <div id="counter">
-                    <!-- class:bg-[#85BF7B]={countdown > 7}
-                    class:bg-[#ffa500]={countdown <= 7 && countdown > 4}
-                    class:bg-[#ff0000]={countdown < 4} -->
+                    <div id="counter"
+                    class:countdown-green={countdown > 7}
+                    class:countdown-orange={countdown <= 7 && countdown >= 4}
+                    class:countdown-red={countdown < 4}>
                         <p>{countdown}</p>
                         <p class="text-[1.75vw]">SEC</p>
                     </div>
@@ -241,11 +253,12 @@ let handlehome = async()=>{
                     </div>
                     <div id="question" class="text-white font-semibold text-[3vw] max-w-3xl">{questions[i].question}</div>
                     <div id="options" class="text-white font-medium text-[2vw] flex flex-col text-right p-8 ml-8 items-start">
-                        <button id="option1" on:click={func1}>A. {questions[i].option1}</button>
-                        <button id="option2" on:click={func2}>B. {questions[i].option2}</button>
-                        <button id="option3" on:click={func3}>C. {questions[i].option3}</button>
-                        <button id="option4" on:click={func4}>D. {questions[i].option4}</button>
-                        <p>{high}</p>
+                        <button id="option1" class="" on:click={func1}
+                        class:option-selected-ans = {high==1}
+                        >A. {questions[i].option1}</button>
+                        <button id="option2" on:click={func2} class:option-selected-ans = {high==2}>B. {questions[i].option2}</button>
+                        <button id="option3" on:click={func3} class:option-selected-ans = {high==3}>C. {questions[i].option3}</button>
+                        <button id="option4" on:click={func4} class:option-selected-ans = {high==4}>D. {questions[i].option4}</button>
                     </div>
                     <div id="stats" class="flex flex-row gap-[3.5vw] m-5 text-[1.75vw]">
                         <div id="attempted" class="text-[#D0F3FF]">attempted: {attempted}</div>
