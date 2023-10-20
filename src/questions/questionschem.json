@@ -1,0 +1,93 @@
+[
+    {
+      "Question": "What is an example of an instrumental method used in chemical analysis?",
+      "Option1": "Titration",
+      "Option2": "Gravimetric analysis",
+      "Option3": "NMR spectroscopy",
+      "Option4": "Volumetric analysis",
+      "CorrectOption": 3,
+      "Topic": "Modern Methods of Chemical Analysis"
+    },
+    {
+      "Question": "Which modern technique is commonly used for the identification of organic compounds based on their mass-to-charge ratio?",
+      "Option1": "UV-Visible spectroscopy",
+      "Option2": "Infrared spectroscopy",
+      "Option3": "Mass spectrometry",
+      "Option4": "Nuclear magnetic resonance (NMR)",
+      "CorrectOption": 3,
+      "Topic": "Modern Methods of Chemical Analysis"
+    },
+    {
+      "Question": "In atomic absorption spectroscopy, which of the following is responsible for the absorption of specific wavelengths of light?",
+      "Option1": "Electrons in the ground state",
+      "Option2": "Protons in the nucleus",
+      "Option3": "Neutrons in the nucleus",
+      "Option4": "Electrons in excited states",
+      "CorrectOption": 1,
+      "Topic": "Modern Methods of Chemical Analysis"
+    },
+    {
+      "Question": "What is the technique that uses X-rays to determine the crystal structure of a compound?",
+      "Option1": "Nuclear magnetic resonance (NMR) spectroscopy",
+      "Option2": "X-ray crystallography",
+      "Option3": "Mass spectrometry",
+      "Option4": "Chromatography",
+      "CorrectOption": 2,
+      "Topic": "Modern Methods of Chemical Analysis"
+    },
+    {
+      "Question": "Which technique is commonly used for separating and analyzing mixtures of compounds based on their differential distribution between two phases?",
+      "Option1": "Nuclear magnetic resonance (NMR) spectroscopy",
+      "Option2": "TLC (Thin-Layer Chromatography)",
+      "Option3": "X-ray crystallography",
+      "Option4": "Atomic absorption spectroscopy",
+      "CorrectOption": 2,
+      "Topic": "Modern Methods of Chemical Analysis"
+    },
+    {
+      "Question": "What is the most widely used gas chromatography (GC) detector for detecting and quantifying compounds in a sample?",
+      "Option1": "Mass spectrometer (MS)",
+      "Option2": "Flame ionization detector (FID)",
+      "Option3": "Ultraviolet-visible (UV-Vis) detector",
+      "Option4": "Nuclear magnetic resonance (NMR) spectrometer",
+      "CorrectOption": 2,
+      "Topic": "Modern Methods of Chemical Analysis"
+    },
+    {
+      "Question": "Which spectroscopic technique is useful for identifying functional groups in organic compounds?",
+      "Option1": "Nuclear magnetic resonance (NMR) spectroscopy",
+      "Option2": "Inductively coupled plasma mass spectrometry (ICP-MS)",
+      "Option3": "Infrared (IR) spectroscopy",
+      "Option4": "Ultraviolet-visible (UV-Vis) spectroscopy",
+      "CorrectOption": 3,
+      "Topic": "Modern Methods of Chemical Analysis"
+    },
+    {
+      "Question": "What is the primary purpose of liquid chromatography (LC) in chemical analysis?",
+      "Option1": "Quantitative analysis of gases",
+      "Option2": "Isolating radioactive isotopes",
+      "Option3": "Separation and identification of compounds in a liquid mixture",
+      "Option4": "Studying crystal structures",
+      "CorrectOption": 3,
+      "Topic": "Modern Methods of Chemical Analysis"
+    },
+    {
+      "Question": "Which analytical technique involves the use of high-energy electrons to examine the surface of a sample?",
+      "Option1": "Nuclear magnetic resonance (NMR) spectroscopy",
+      "Option2": "X-ray crystallography",
+      "Option3": "Scanning electron microscopy (SEM)",
+      "Option4": "Fluorescence spectroscopy",
+      "CorrectOption": 3,
+      "Topic": "Modern Methods of Chemical Analysis"
+    },
+    {
+      "Question": "In chemical analysis, what does the term 'titration' refer to?",
+      "Option1": "A separation technique based on differential distribution",
+      "Option2": "The use of UV-Visible spectroscopy",
+      "Option3": "A technique used to determine the concentration of a substance in a solution",
+      "Option4": "An analytical method for studying crystal structures",
+      "CorrectOption": 3,
+      "Topic": "Modern Methods of Chemical Analysis"
+    }
+  ]
+  
