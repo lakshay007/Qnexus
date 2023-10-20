@@ -15,6 +15,7 @@
         x = doc(db,"playerprofiles", user.uid);
      ref = await getDoc(x);
      if(ref.data().playercoins>=redval){
+        alert("purchase successful");
         notenoughcoins = 0;
         let newcoins=ref.data().playercoins-redval;
         setDoc(x, {

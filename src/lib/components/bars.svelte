@@ -57,7 +57,7 @@
             </div>
             <div class="flex flex-row gap-4 mx-5 text-black" style="font-family: Merriweather">
                 <a class="" href="/store">        
-                    <div class="h-[6.75vh] w-[9.733vw] bg-black rounded-3xl flex flex-row">
+                    <div class="h-[6.75vh] w-[11vw] bg-black rounded-3xl flex flex-row">
                         <img src={coin} alt=""/>
                         <p class="text-white text-right grow text-[4.5vh] mx-[1vw]">{coins}</p>
                     </div>
