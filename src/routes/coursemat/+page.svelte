@@ -4,13 +4,13 @@
   let onclick = (subject) => {
     val = subject;
     if (val === "Chemistry") {
-      chem =1;
+        window.location.href = "chemcourse";
     }
     else if(val === "Ml"){
-        ml =1;
+        window.location.href = "mlmat";
     }
     else if(val === "Physics"){
-        phy = 1;
+        window.location.href = "phycourse";
     }
     sub = 1;
   };
@@ -21,16 +21,6 @@
     <a href="#" on:click={() => onclick("Chemistry")}>chemistry <br></a>
     <a href="#" on:click={() => onclick("Ml")}>Ml <br></a>
     <a href="#" on:click={() => onclick("Physics")}>physics <br></a>
-    {/if}
-    {#if chem === 1}
-    <div class="grow flex flex-row justify-center overflow-hidden h-screen w-screen m-0 absolute items-center bg-black">
-      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSfKNxC250AWjH2RSp4d_ZJ0zG0Aphm_VwIw0dJG9hMx59KCfcwKa9B90lnSjxzjmLMmtoexx5eIeIo/embed?start=false&loop=false&delayms=60000&widget=false&headers=false&chrome=false" frameborder="0" width="1800" height="1800" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" title="" class="absolute justify-self-center w-[85vw]"></iframe>
-    </div>
-    {/if}
-    {#if phy === 1}
-    <div class="grow flex flex-row justify-center overflow-hidden h-screen w-screen m-0 absolute items-center bg-black">
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ-j7keQyjBuqTXB_KQH7KYvLI0wsZouh1M5P4Lalt1RlSye-OzfgyaVTql2oufY6WlRZSqo-QblSro/embed?start=false&loop=false&delayms=60000" frameborder="0" width="1800" height="1000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    </div>
     {/if}
 </main>
 <style>
