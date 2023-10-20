@@ -4,11 +4,20 @@ import { doc , setDoc, updateDoc, addDoc, getDoc, onSnapshot, deleteDoc,collecti
     import { getAuth, onAuthStateChanged } from "firebase/auth";
     import { onMount } from "svelte";
     import { writable } from 'svelte/store'
+    let docref,x,yoid,yocoins,ref;
     let dataArray = writable([]); 
-
+const auth = getAuth();
     onMount(async()=>{
         const data = [];
-        let docref = collection(db, "playerprofiles");
+         docref = collection(db, "playerprofiles");
+         onAuthStateChanged(auth, async(user) => {
+            if(user){
+                ref = doc(db,"playerprofiles",user.uid)
+                x = await getDoc(ref);
+                yoid = x.data().playername;
+                yocoins = x.data().credits;
+                
+            }})
         const q = query(docref,where("playercoins",">=",0) );
         await getDocs(q)
         .then(async(querySnapshot) => {
@@ -38,6 +47,7 @@ import { doc , setDoc, updateDoc, addDoc, getDoc, onSnapshot, deleteDoc,collecti
     {#await $dataArray}
         <p>Loading data...</p>
     {:then data}
+    <h1>your name {yoid}  your coins:  {yocoins}</h1>
         {#each data as { playername, credits }, i}
             <h1>{i+1 }. {playername} :{credits}</h1>
         {/each}
