@@ -10,7 +10,7 @@
     let notattempted = 0;
     let namef1,namef2;
     let player1score ,player2score;
-    let pname;
+    let pname,high;
 let l,m,n,o;
 l = 0;m = 0;n=0;o=0;
 let qw,we,er,rt;
@@ -79,6 +79,7 @@ setTimeout(() => {
 });
 
 let func1 = ()=>{
+    high =1;
     if(attempted+notattempted<=i)
     attempted++;
     if(questions[i].answer==1 &&l==0){
@@ -90,6 +91,7 @@ let func1 = ()=>{
     qw=1;
 }
 let func2 = ()=>{
+    high = 2;
     if(attempted+notattempted<=i)
     attempted++;
     if(questions[i].answer==2 && m==0){
@@ -101,6 +103,7 @@ let func2 = ()=>{
    we=1;
 }
 let func3 = ()=>{
+    high =3;
     if(attempted+notattempted<=i)
     attempted++;
     if(questions[i].answer==3 &&n==0){
@@ -112,6 +115,7 @@ let func3 = ()=>{
    er=1;
 }
 let func4 = ()=>{
+    high = 4;
     if(attempted+notattempted<=i)
     attempted++;
     if(questions[i].answer==4 &&o==0){
@@ -241,6 +245,7 @@ let handlehome = async()=>{
                         <button id="option2" on:click={func2}>B. {questions[i].option2}</button>
                         <button id="option3" on:click={func3}>C. {questions[i].option3}</button>
                         <button id="option4" on:click={func4}>D. {questions[i].option4}</button>
+                        <p>{high}</p>
                     </div>
                     <div id="stats" class="flex flex-row gap-[3.5vw] m-5 text-[1.75vw]">
                         <div id="attempted" class="text-[#D0F3FF]">attempted: {attempted}</div>
