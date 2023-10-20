@@ -18,7 +18,7 @@
         notenoughcoins = 0;
         let newcoins=ref.data().playercoins-redval;
         setDoc(x, {
-       playercoins: [newcoins]
+       playercoins: newcoins
 },{ merge: true });
      }
      else{
