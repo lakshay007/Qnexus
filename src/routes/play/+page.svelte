@@ -34,16 +34,31 @@ window.location.href = "room";  }
 let upload = async(topic) =>{
   await setDoc(doc(db, "topicselected","one"), {
     "selected":topic
-})
+});
+console.log("subject " + topic);
 }
 
-
+onMount(() => upload("electrochem"));
 
 </script>
 
 <main class="grow flex flex-col justify-center items-center gap-5">
     {#if shh1==true}
-    <p class="lowercase text-6xl text-[#FDB6B6]" style="font-family: 'Share Tech Mono';">&lt;your code&gt;</p>
+    <p class="lowercase text-8xl text-[#FDB6B6]" style="font-family: 'Share Tech Mono';">&lt;your code&gt;</p>
+    <div class="flex flex-col items-start">
+      <label class="label" for="subject">
+        <span class="label-text text-3xl text-white font-['MerriWeather']">Subject</span>
+      </label>
+      <select class="select select-bordered w-[24vw] text-white text-xl font-['MerriWeather']" style=""
+      on:change={(event) => upload(event.target.value)}>
+        <option disabled>Chemistry</option>
+        <option selected value="electrochem">Electrochemistry</option>
+        <option value="corrosion">Corrosion</option>
+        <option disabled>Machine Learning</option>
+        <option value="linear">Linear Regression</option>
+        <option value="logisitic">Logistic Regression</option>
+      </select>
+    </div>
     <div class="flex flex-row gap-x-10 items-center">
       <p class="bg-slate-300 p-5 text-black text-2xl">{uid}</p>
       <button type="button" class="btn btn-circle btn-outline" on:click={handleCopy}>
@@ -52,19 +67,9 @@ let upload = async(topic) =>{
         </svg>
       </button>
     </div>
-    <ul>
-      <a on:click={() => upload("electrochem")} >Electrochemistry</a>
-      <a on:click={() => upload("corrosion")}>Corrosion</a>
-  </ul>
-
-  <h3>Machine Learning</h3>
-  <ul>
-      <a on:click={() => upload("linear")}>Linear Regression</a>
-      <a on:click={() => upload("logisitc")}>Logistic Regression</a>
-  </ul>
     {/if}
 </main>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Exo&family=Kaisei+Tokumin:wght@500&family=Merriweather&family=Share+Tech+Mono&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Acme&family=DM+Sans:opsz@9..40&family=Exo&family=K2D&family=Kaisei+Tokumin&family=Karma:wght@500&family=KoHo:wght@500&family=Merriweather&family=Offside&family=Overpass+Mono&family=Ruslan+Display&family=Share+Tech+Mono&display=swap');
 </style>
