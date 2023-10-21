@@ -18,6 +18,10 @@
     import electro from "../../assets/electrochemistry.jpg";
     import battery from "../../assets/battery.jpg";
     import SubjectButton from "../../lib/components/subjectButton.svelte";
+    import SubjectIcon from "../../lib/components/subjectIcon.svelte";
+    import lr1img from "../../assets/lr.jpg";
+    import lr2img from "../../assets/lr2.jpg";
+    import clusterimg from "../../assets/cluster.jpg";
     let correctans;
 
     let formattedTime = "20:00"; 
@@ -60,21 +64,6 @@
         background-position: center left;
         font-family: "Acme";
     }
-    #counter {
-        height: 11.66666vw;
-        width: 11.66666vw;
-        border-radius: 9999px;
-        font-family: 'Share Tech Mono';
-        font-size: 3vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        --tw-text-opacity: 1;
-        color: rgb(0 0 0 / var(--tw-text-opacity));
-        background-color: #D0F3FF;
-        z-index: 0;
-    }
 </style>
 
 {#if sub == 0}
@@ -101,9 +90,11 @@
     </div>
     <p class="text-center text-white font-['MerriWeather'] text-4xl">Select your topic</p>
     {#if val === "Chemistry"}
-    <a href="/corrosion" >corrosion <br></a>
-    <a href="/electro" >electrochemistry <br></a>
-    <a href="/battech" >battery Tech <br></a>
+    <div class="flex flex-row gap-x-7">
+        <SubjectIcon ref="/corrosion" title="corrosion" src={corrosion}/>
+        <SubjectIcon ref="/electro" title="electrochemistry" src={electro}/>
+        <SubjectIcon ref="/battech" title="battery tech" src={battery}/>
+    </div>
     {/if}
     {#if val === "Physics"}
     <div class="flex flex-row gap-x-7">
@@ -113,9 +104,11 @@
     </div>
     {/if}
     {#if val === "Ml"}
-    <a href="/lr" >Linear Regression <br></a>
-    <a href="/lr2">Logistic regression <br></a>
-    <a href="/cluster" >Clustering <br></a>
+    <div class="flex flex-row gap-x-7">
+        <SubjectIcon ref="/lr" title="Linear Regression" src={lr1img}/>
+        <SubjectIcon ref="/lr2" title="Logistic Regression" src={lr2img}/>
+        <SubjectIcon ref="/cluster" title="Clustering" src={clusterimg}/>
+    </div>
     {/if}
 </main>
 {/if}

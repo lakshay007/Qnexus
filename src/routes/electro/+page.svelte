@@ -35,26 +35,78 @@ import { db } from "../../firebase1/firebaseConfig";
         }
 </script>
 <main>
-    {#if submitted == 0}
-    {#if timerloaded ==1}
-    <h1>{formattedTime}</h1>
-    <h1>{electr[i].Question}</h1>
-    <Radio bind:group value={1}>{electr[i].Option1}</Radio> <br>
-    <Radio bind:group value={2}>{electr[i].Option2}</Radio> <br>
-    <Radio bind:group value={3}>{electr[i].Option3}</Radio> <br>
-    <Radio bind:group value={4}>{electr[i].Option4}</Radio> <br>
-    {#if i==14}
-    <button type="button" on:click={handlesubmit}>submit</button>
-    {/if}
-    {#if i<14}
-    <button type="button" on:click={handleNext}>next</button>
-    {/if}
-        {/if}
-        {/if}
-        {#if submitted == 1}
-            <h1>you were able to answer {correctans} questions correctly</h1>
+        {#if submitted == 0}
+            {#if timerloaded == 1}
+                <div id="counter" class="">
+                    <p>{formattedTime}</p>
+                    <p class="text-[1.75vw]">MIN</p>
+                </div>
+                <div class="grow flex flex-col h-screen items-center justify-center gap-y-5">
+                    <div id="question" class="text-white font-semibold text-[3vw] max-w-3xl"><p>{electr[i].Question}</p></div>
+                    <div id="options" class="text-white font-medium text-[2vw] flex flex-col text-right p-8 ml-8 items-start">
+                        <Radio bind:group value={1}>{electr[i].Option1}</Radio> <br>
+                        <Radio bind:group value={2}>{electr[i].Option2}</Radio> <br>
+                        <Radio bind:group value={3}>{electr[i].Option3}</Radio> <br>
+                        <Radio bind:group value={4}>{electr[i].Option4}</Radio> <br>
+                    </div>
+                    <div id="stats" class="flex flex-row gap-[3.5vw] m-5 text-[1.75vw]">
+                        {#if i==14}
+                            <button type="button" class="btn btn-error btn-sm lowercase text-[1.75vw] w-[9.75vw]" style="font-family: 'Share Tech Mono';" on:click={handlesubmit}>&lt;submit&gt;</button>
+                        {/if}
+                        {#if i<14}
+                        <button type="button" class="btn btn-success btn-sm lowercase text-[1.75vw] w-[9.75vw]" style="font-family: 'Share Tech Mono';" on:click={handleNext}>&lt;next&gt;</button>
+                        {/if}
+                    </div>
+                </div>
             {/if}
-</main>
-<style>
-    
-</style>
+        {/if}
+        {#if submitted==1}
+        <div class="h-screen w-screen flex flex-col grow items-center justify-center">
+            <p class="text-white text-4xl m-4 lowercase" style="font-family:'Share Tech Mono';">you were able to answer {correctans} questions correctly</p>
+            <a href="/dashboard">
+                <button class="btn btn-error">RETURN TO DASHBOARD</button>
+            </a>
+        </div>
+        {/if}
+    </main>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo&family=Kaisei+Tokumin:wght@500&family=Merriweather&family=Share+Tech+Mono&display=swap');
+    #counter {
+        position: absolute;
+        height: 11.66666vw;
+        width: 11.66666vw;
+        border-radius: 9999px;
+        top: 39vh;
+        left: 3vw;
+        font-family: 'Share Tech Mono';
+        font-size: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        --tw-text-opacity: 1;
+        color: rgb(0 0 0 / var(--tw-text-opacity));
+        background-color: #85BF7B;
+    }
+
+    #questionNo {
+        font-family: 'Share Tech Mono';
+    }
+
+    #question {
+        font-family: 'Kaisei Tokumin';
+    }
+
+    #options {
+        font-family: 'Kaisei Tokumin';
+    }
+
+    #stats {
+        font-family: 'Share Tech Mono';
+    }
+    #quizend {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+    }
+    </style>

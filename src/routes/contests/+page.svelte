@@ -213,7 +213,7 @@ await getDocs(q)
         {/if}
       {/if}
       {#if end == 1}
-      <div class="h-screen w-screen flex flex-row grow items-center">
+      <div class="h-screen w-screen flex flex-col grow items-center">
         <p class="text-white text-4xl m-4 lowercase" style="font-family:'Share Tech Mono';">quiz has ended</p>
         <a href="/dashboard">
           <button class="btn btn-error">RETURN TO DASHBOARD</button>
