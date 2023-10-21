@@ -66,14 +66,14 @@ const click = async() =>{
     </div>
     <div id="contests" class="grow w-[67.5vw] mb-[3.25vh] flex flex-row gap-x-[8vw]">
         <div class="">
-            <ContestIcon state=1>
+            <ContestIcon title="AIML - 1" state=1>
                 <a href="/contests" >
                     contest1
                 </a>
             </ContestIcon>
         </div>
         <div class="">
-            <ContestIcon>
+            <ContestIcon title="Chemistry">
                 <a href="/contests" >
                     contest2
                 </a>
