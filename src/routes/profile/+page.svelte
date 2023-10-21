@@ -5,6 +5,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { onMount } from "svelte";
 let year,semester,college,regno,flag = 0,name,coins,credits;
 let flag4 = 0;
+import profile from "../../assets/profile.gif";
 const auth = getAuth();
 onMount(async()=>{
     
@@ -21,7 +22,7 @@ onMount(async()=>{
         name = ref.data().playername;
         year = ref.data().year;
         semester = ref.data().semester;
-        regno = ref.data().refno;
+        regno = ref.data().regno;
         coins = ref.data().playercoins;
         college = ref.data().college;
 
@@ -49,7 +50,8 @@ let handlesubmit = async()=>{
         playercoins:1,
         credits:1
 });
- flag = 1; }
+flag4 = 1;
+if(!alert('Profile Created Succesfully!!')){window.location.reload();} }
 
 });
   }
@@ -58,70 +60,86 @@ let handlesubmit = async()=>{
     @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 </style>
 <main class="flex flex-row grow justify-center items-center">
-    {#if flag4==0}
+    
     <form action="submit_form.php" method="post" enctype="multipart/form-data" class="grow mx-16 my-0">
-        <div class="space-y-[2rem] form-control m-5 bg-gray-900 shadow rounded p-8 sm:p-12">
-            <div class="flex flex-col">
-                <label for="name" class="label font-semibold leading-none text-gray-300">Name</label>
-                <input type="text" class="grow input input-bordered" bind:value = {name} id="name" name="name" required>
-            </div>
-                
-            <div class="flex gap-4">
-                <div class="flex flex-col grow">
-                    <label for="year" class="label font-semibold leading-none text-gray-300">Year</label>
-                    <select id="year" class="select select-bordered" bind:value={year} name="year" required>
-                        <option value="1">1st Year</option>
-                        <option value="2">2nd Year</option>
-                        <option value="3">3rd Year</option>
-                        <option value="4">4th Year</option>
-                    </select>
+        
+        <div class="space-y-[2rem] flex flex-row m-5 bg-gray-900 shadow rounded p-8 sm:p-12 items-center gap-x-6">
+            
+            <img src={profile} class="h-[70vh] rounded-lg" alt="" />
+            <div class="flex flex-col grow gap-6">
+                <div class="flex flex-col">
+                    <label for="name" class="label font-semibold leading-none text-gray-300">Name</label>
+                    {#if flag4 == 0}
+                    <input type="text" class="grow input input-bordered" bind:value = {name} id="name" name="name" required>
+                    {:else}
+                        <p class="font-['MerriWeather'] bg-gray-400 text-black rounded-md text-center text-xl">{name}</p>
+                    {/if}
                 </div>
-                <div class="flex flex-col grow">
-                    <label for="semester" class="label font-semibold leading-none text-gray-300">Semester</label>
-                    <select id="semester" class="select select-bordered" bind:value={semester} name="semester" required>
-                        <!-- <option disabled selected>SEMESTER</option> -->
-                        <option value="1">1st Semester</option>
-                        <option value="2">2nd Semester</option>
-                        <option value="3">3rd Semester</option>
-                        <option value="4">4th Semester</option>
-                    </select>
+                    
+                <div class="flex gap-4">
+                    <div class="flex flex-col grow">
+                        <label for="year" class="label font-semibold leading-none text-gray-300">Year</label>
+                        {#if flag4 == 0}
+                        <select id="year" class="select select-bordered" bind:value={year} name="year" required>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                        {:else}
+                        <p class="font-['MerriWeather'] bg-gray-400 text-black rounded-md text-center text-xl">{year}</p>
+                        {/if}
+                    </div>
+                    <div class="flex flex-col grow">
+                        <label for="semester" class="label font-semibold leading-none text-gray-300">Semester</label>
+                        {#if flag4 == 0}
+                        <select id="semester" class="select select-bordered" bind:value={semester} name="semester" required>
+                            <!-- <option disabled selected>SEMESTER</option> -->
+                            <option value="1">Odd Semester</option>
+                            <option value="2">Even Semester</option>
+                        </select>
+                        {:else if {semester} == "1"}
+                            <p class="font-['MerriWeather'] bg-gray-400 text-black rounded-md text-center text-xl">Odd Semester</p>
+                        {:else if {semester} == "2"}
+                            <p class="font-['MerriWeather'] bg-gray-400 text-black rounded-md text-center text-xl">Even Semester</p>
+                        {:else}
+                        <p class="font-['MerriWeather'] bg-gray-400 text-black rounded-md text-center text-xl">{semester}</p>
+                        {/if}
+                    </div>
                 </div>
-            </div>
-
-            <div class="flex flex-col">
-                <label for="college" class="label font-semibold leading-none text-gray-300">College</label>
-                <select id="college" class="select select-bordered" bind:value={college} name="college" required>
-                    <option value="MIT">Manipal institute of technology</option>
-                    <option value="KMC">KMC</option>
-                </select>
-            </div>
-
-            <div class="flex flex-col">
-                <label for="regNumber" class="label font-semibold leading-none text-gray-300">Registration Number</label>
-                <input class="input input-bordered" type="text" id="regNumber" bind:value={regno} name="regNumber" required>
-            </div>
-
-
-            <!-- <label for="userImage">User Image:</label>
-            <input type="file" id="userImage" name="userImage" accept="image/*"><br><br> -->
-            <div class="flex flex-row justify-center gap-3">
-                {#if flag==1} 
-                    <p class="capitalize text-3xl font-semibold">profile created succesfully! refresh the page to see your profile</p>
-                {:else}
-                    <a href="/dashboard"><button type="button" class="btn btn-error">return</button></a>
-                    <button type="button" class="btn btn-success" on:click={handlesubmit}>submit</button>
-                {/if}
+    
+                <div class="flex flex-col">
+                    <label for="college" class="label font-semibold leading-none text-gray-300">College</label>
+                    {#if flag4 == 0}
+                    <select id="college" class="select select-bordered" bind:value={college} name="college" required>
+                        <option value="MIT">Manipal institute of technology</option>
+                        <option value="KMC">KMC</option>
+                    </select>
+                    {:else}
+                        <p class="font-['MerriWeather'] bg-gray-400 text-black rounded-md text-center text-xl">{college}</p>
+                    {/if}
+                </div>
+    
+                <div class="flex flex-col">
+                    <label for="regNumber" class="label font-semibold leading-none text-gray-300">Registration Number</label>
+                    {#if flag4 == 0}
+                    <input class="input input-bordered" type="text" id="regNumber" bind:value={regno} name="regNumber" required>
+                    {:else}
+                        <p class="font-['MerriWeather'] bg-gray-400 text-black rounded-md text-center text-xl">{regno}</p>
+                    {/if}
+                </div>
+    
+    
+                <!-- <label for="userImage">User Image:</label>
+                <input type="file" id="userImage" name="userImage" accept="image/*"><br><br> -->
+                <div class="flex flex-row justify-center gap-3">
+                    {#if flag==1 || flag4 == 1} 
+                        <p class="capitalize text-3xl font-semibold"></p>
+                    {:else}
+                        <button type="button" class="btn btn-success w-[20vh]" on:click={handlesubmit}>submit</button>
+                    {/if}
+                </div>
             </div>
         </div>
     </form>
-   
-    {/if}
-    {#if flag4 == 1}
-    <div class="space-y-[2rem] flex flex-col m-5 bg-gray-900 shadow rounded p-8 sm:p-12 items-center">
-        <div>Name: {name}</div>
-        <div>Semester: {semester}</div>
-        <div>Year: {year}</div>
-        <div>Coins: {coins}</div>
-    </div>
-    {/if}
 </main>
