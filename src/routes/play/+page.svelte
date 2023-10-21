@@ -56,7 +56,7 @@ onMount(() => upload("electrochem"));
         <option value="corrosion">Corrosion</option>
         <option disabled>Machine Learning</option>
         <option value="linear">Linear Regression</option>
-        <option value="logisitic">Logistic Regression</option>
+        <option value="logistic">Logistic Regression</option>
       </select>
     </div>
     <div class="flex flex-row gap-x-10 items-center">
