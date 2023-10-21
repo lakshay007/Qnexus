@@ -73,16 +73,35 @@ import { db } from "../../firebase1/firebaseConfig";
         <a href="/dashboard">
             <button class="btn btn-error">RETURN TO DASHBOARD</button>
         </a>
-        <h1>your incorrect/unattempted questions:</h1>
-        {#each wrongans as { Question, CorrectOption }, i}
-        <h1>{Question}</h1>
-        <h1>correctans: {wrongans[i]["Option"+CorrectOption]}</h1>
-        {/each}
+        <p class="text-white text-3xl m-4 lowercase" style="font-family:'Share Tech Mono';">your incorrect/unattempted questions:</p>
+        <div class=" grow flex flex-col w-[80vw] jutsify-center text-center max-h-[67.5vh]">
+            <div class="flex flex-row text-black bg-[#F88379] items-center" style="font-family:'Overpass Mono';">
+                <div class="grow m-4 text-center">
+                    QUESTION
+                </div>
+                <div class="m-4 w-[40vw] text-center">
+                    CORRECT
+                </div>
+            </div>
+            <div class="grow flex flex-col items-center" style="overflow-y: auto;">
+                {#each wrongans as { Question, CorrectOption }, i}
+                <div class="flex flex-row" style="font-family:'Overpass Mono';">
+                    <div class="m-4 text-center w-[40vw]">
+                        {Question}
+                    </div>
+                    <div class="m-4 w-[40vw] text-center">
+                        {wrongans[i]["Option"+CorrectOption]}
+                    </div>
+                </div>
+                {/each}
+            </div>
+        </div>
     </div>
     {/if}
 </main>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Exo&family=Kaisei+Tokumin:wght@500&family=Merriweather&family=Share+Tech+Mono&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Acme&family=DM+Sans:opsz@9..40&family=Exo&family=K2D&family=Kaisei+Tokumin&family=Karma:wght@500&family=KoHo:wght@500&family=Merriweather&family=Offside&family=Overpass+Mono&family=Ruslan+Display&display=swap');
 #counter {
     position: absolute;
     height: 11.66666vw;
