@@ -168,6 +168,7 @@ let handleNext = () =>{
                 [finished]: 1
             },{ merge: true });
     }
+    high = 0;
 }
 if(i==9) end = 1;
 let countdown = 15;
