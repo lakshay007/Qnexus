@@ -3,9 +3,16 @@
     import { doc, setDoc,updateDoc,addDoc,getDoc,onSnapshot,deleteDoc} from "firebase/firestore"; 
     import { getAuth, onAuthStateChanged } from "firebase/auth";
     import { onMount } from "svelte";
-    import questions from "../../questions/questions.json"
+    import corrq from '../../questions/questions.json';
+    import electr from '../../questions/questionse.json';
+    import lr1 from '../../questions/lr1.json'
+    import lr2 from '../../questions/lr2.json'
+    import clus from '../../questions/clustering.json'
+    import cheme from '../../questions/questionschem.json';
     import roomimg from "../../assets/room.png";
     import quizend from "../../assets/quizend.gif";
+    let x11,ref1;
+    let selected = [];
     let attempted = 0;
     let notattempted = 0;
     let namef1,namef2;
@@ -24,8 +31,27 @@ qw=0;we=0;er=0;rt=0;
     let name1,name2;
     const auth = getAuth();
     onMount(async() => {
+        
          x = doc(db,"room", "one");
      ref = await getDoc(x);
+     x11 = doc(db,"topicselected", "one");
+     ref1 = await getDoc(x11);
+
+     if(ref1.data().selected == "corrosion"){
+        selected = [...corrq];
+        
+     }
+     if(ref1.data().selected == "electrochem"){
+        selected = [...electr];
+     }
+     if(ref1.data().selected == "linear"){
+        selected = [...lr1];
+        console.log(selected);
+     }
+     if(ref1.data().selected == "logistic"){
+        selected = [...lr2];
+     }
+     
      name1 = ref.data().player1name;
      name2 = ref.data().player2name;
      namef1 = name1+"finished";
@@ -82,7 +108,7 @@ let func1 = ()=>{
     high =1;
     if(attempted+notattempted<=i)
     attempted++;
-    if(questions[i].answer==1 &&l==0){
+    if(selected[i].CorrectOption==1 &&l==0){
         ans++;
         setDoc(x, {
        [a]: ans
@@ -94,7 +120,7 @@ let func2 = ()=>{
     high = 2;
     if(attempted+notattempted<=i)
     attempted++;
-    if(questions[i].answer==2 && m==0){
+    if(selected[i].CorrectOption==2 && m==0){
         ans++;
         setDoc(x, {
        [a]: ans
@@ -106,7 +132,7 @@ let func3 = ()=>{
     high =3;
     if(attempted+notattempted<=i)
     attempted++;
-    if(questions[i].answer==3 &&n==0){
+    if(selected[i].CorrectOption==3 &&n==0){
         ans++;
         setDoc(x, {
        [a]: ans
@@ -118,7 +144,7 @@ let func4 = ()=>{
     high = 4;
     if(attempted+notattempted<=i)
     attempted++;
-    if(questions[i].answer==4 &&o==0){
+    if(selected[i].CorrectOption==4 &&o==0){
         ans++;
         setDoc(x, {
        [a]: ans
@@ -251,14 +277,14 @@ let handlehome = async()=>{
                     <div id="questionNo" class="bg-[#D0F3FF] rounded-full mb-[3vh] w-[15vw]">
                         <div class="mx-[1vw] text-center text-black text-[2vw] font-normal font-['Share Tech Mono'] ">question: {i+1}</div>
                     </div>
-                    <div id="question" class="text-white font-semibold text-[3vw] max-w-3xl">{questions[i].question}</div>
+                    <div id="question" class="text-white font-semibold text-[3vw] max-w-3xl">{selected[i].Question}</div>
                     <div id="options" class="text-white font-medium text-[2vw] flex flex-col text-right p-8 ml-8 items-start">
                         <button id="option1" class="" on:click={func1}
                         class:option-selected-ans = {high==1}
-                        >A. {questions[i].option1}</button>
-                        <button id="option2" on:click={func2} class:option-selected-ans = {high==2}>B. {questions[i].option2}</button>
-                        <button id="option3" on:click={func3} class:option-selected-ans = {high==3}>C. {questions[i].option3}</button>
-                        <button id="option4" on:click={func4} class:option-selected-ans = {high==4}>D. {questions[i].option4}</button>
+                        >A. {selected[i].Option1}</button>
+                        <button id="option2" on:click={func2} class:option-selected-ans = {high==2}>B. {selected[i].Option2}</button>
+                        <button id="option3" on:click={func3} class:option-selected-ans = {high==3}>C. {selected[i].Option3}</button>
+                        <button id="option4" on:click={func4} class:option-selected-ans = {high==4}>D. {selected[i].Option4}</button>
                     </div>
                     <div id="stats" class="flex flex-row gap-[3.5vw] m-5 text-[1.75vw]">
                         <div id="attempted" class="text-[#D0F3FF]">attempted: {attempted}</div>

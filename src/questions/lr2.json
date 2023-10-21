@@ -1,0 +1,138 @@
+[
+    {
+      "Question": "In logistic regression, what type of variable is the target variable?",
+      "Option1": "Binary",
+      "Option2": "Continuous",
+      "Option3": "Categorical",
+      "Option4": "Ordinal",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "What is the name of the function used in logistic regression to squash the output between 0 and 1?",
+      "Option1": "Sigmoid function",
+      "Option2": "Softmax function",
+      "Option3": "Step function",
+      "Option4": "RectifiedLinearUnit(ReLU)",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "In logistic regression, what is the goal of the model?",
+      "Option1": "Predict the probability of a binary outcome",
+      "Option2": "Predict a continuous outcome",
+      "Option3": "Predict a categorical outcome",
+      "Option4": "Predict the mean of the data",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "What is the range of predicted probabilities in logistic regression?",
+      "Option1": "0 to 1",
+      "Option2": "-1 to 1",
+      "Option3": "1 to ∞",
+      "Option4": "-∞ to ∞",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "In logistic regression, what is the logit function?",
+      "Option1": "The logarithm of the odds ratio",
+      "Option2": "The inverse of the sigmoid function",
+      "Option3": "The derivative of the sigmoid function",
+      "Option4": "The natural logarithm",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "What does the odds ratio represent in logistic regression?",
+      "Option1": "The odds of the event happening",
+      "Option2": "The log of the odds of the event happening",
+      "Option3": "The probability of the event happening",
+      "Option4": "The logit function",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "What is the key evaluation metric for logistic regression models?",
+      "Option1": "Accuracy",
+      "Option2": "MeanSquaredError(MSE)",
+      "Option3": "AUC-ROC",
+      "Option4": "F1Score",
+      "CorrectOption": 3,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "In logistic regression, what happens as the log-odds increase?",
+      "Option1": "Probability of the event happening increases",
+      "Option2": "Probability of the event happening decreases",
+      "Option3": "Probability remains constant",
+      "Option4": "The model becomes invalid",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "What technique is used to optimize the parameters (weights) in logistic regression?",
+      "Option1": "GradientDescent",
+      "Option2": "RandomForest",
+      "Option3": "K-nearestneighbors",
+      "Option4": "SVM",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "What is the cost function used in logistic regression?",
+      "Option1": "LogLoss(BinaryCross-Entropy)",
+      "Option2": "MeanSquaredError(MSE)",
+      "Option3": "MeanAbsoluteError(MAE)",
+      "Option4": "HingeLoss",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "What is the purpose of regularization in logistic regression?",
+      "Option1": "To prevent overfitting",
+      "Option2": "To maximize the log-likelihood",
+      "Option3": "To minimize the log-likelihood",
+      "Option4": "To make the model more complex",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "In logistic regression, what is the penalty term added for regularization?",
+      "Option1": "L1penalty(Lasso)",
+      "Option2": "L2penalty(Ridge)",
+      "Option3": "ElasticNetpenalty",
+      "Option4": "No penalty term in logistic regression",
+      "CorrectOption": 2,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "What is the key assumption of logistic regression?",
+      "Option1": "Linearity in the logit",
+      "Option2": "Normaldistributionoferrors",
+      "Option3": "Homoscedasticity",
+      "Option4": "Independenceofobservations",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "Which algorithm is often used for binary classification problems in logistic regression?",
+      "Option1": "One-vs-Rest(OvR)",
+      "Option2": "One-vs-One(OvO)",
+      "Option3": "Multinomial Logistic Regression",
+      "Option4": "K-nearestneighbors",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    },
+    {
+      "Question": "What is the effect of multicollinearity in logistic regression?",
+      "Option1": "It can lead to unstable estimates of the coefficients",
+      "Option2": "It improves model performance",
+      "Option3": "It doesn't affect logistic regression",
+      "Option4": "It reduces overfitting",
+      "CorrectOption": 1,
+      "Topic": "Logistic Regression"
+    }
+  ]
+  

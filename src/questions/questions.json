@@ -1,92 +1,91 @@
 [
   {
-    "question": "What is corrosion?",
-    "option1": "The process of converting metal into an oxide.",
-    "option2": "A method to protect metal from rusting.",
-    "option3": "The removal of rust from metal.",
-    "option4": "A type of metal alloy.",
-    "answer": 1
+    "Question": "What is corrosion?",
+    "Option1": "The process of converting metal into an oxide.",
+    "Option2": "A method to protect metal from rusting.",
+    "Option3": "The removal of rust from metal.",
+    "Option4": "A type of metal alloy.",
+    "CorrectOption": 1
   },
   
   {
-    "question": "Which environmental factor is a primary cause of corrosion?",
-    "option1": "High humidity",
-    "option2": "Low temperature",
-    "option3": "Extreme pressure",
-    "option4": "Radiation exposure",
-    "answer": 1
+    "Question": "Which environmental factor is a primary cause of corrosion?",
+    "Option1": "High humidity",
+    "Option2": "Low temperature", 
+    "Option3": "Extreme pressure",
+    "Option4": "Radiation exposure",
+    "CorrectOption": 1
   },
   
   {
-    "question": "What is the chemical process involved in rusting?",
-    "option1": "Oxidation",
-    "option2": "Reduction",
-    "option3": "Fermentation",
-    "option4": "Sublimation",
-    "answer": 1
+    "Question": "What is the chemical process involved in rusting?",
+    "Option1": "Oxidation",
+    "Option2": "Reduction",
+    "Option3": "Fermentation",
+    "Option4": "Sublimation",
+    "CorrectOption": 1
   },
   
   {
-    "question": "How can corrosion be prevented?",
-    "option1": "By applying a layer of paint",
-    "option2": "By heating the metal",
-    "option3": "By increasing humidity",
-    "option4": "By exposing the metal to oxygen",
-    "answer": 1
+    "Question": "How can corrosion be prevented?",
+    "Option1": "By applying a layer of paint",
+    "Option2": "By heating the metal",
+    "Option3": "By increasing humidity",
+    "Option4": "By exposing the metal to oxygen",
+    "CorrectOption": 1
   },
   
   {
-    "question": "Which type of metal is most susceptible to corrosion?",
-    "option1": "Aluminum",
-    "option2": "Copper",
-    "option3": "Stainless steel",
-    "option4": "Gold",
-    "answer": 1
+    "Question": "Which type of metal is most susceptible to corrosion?",
+    "Option1": "Aluminum",
+    "Option2": "Copper",
+    "Option3": "Stainless steel",
+    "Option4": "Gold",
+    "CorrectOption": 1
   },
   
   {
-    "question": "What is the name of the process where a less reactive metal corrodes to protect a more reactive metal?",
-    "option1": "Electrolysis",
-    "option2": "Galvanization",
-    "option3": "Cathodic protection",
-    "option4": "Anodization",
-    "answer": 2
+    "Question": "What is the name of the process where a less reactive metal corrodes to protect a more reactive metal?",
+    "Option1": "Electrolysis",
+    "Option2": "Galvanization",
+    "Option3": "Cathodic protection",
+    "Option4": "Anodization",
+    "CorrectOption": 2
   },
   
   {
-    "question": "What is pitting corrosion?",
-    "option1": "Corrosion that occurs uniformly over the entire surface of a metal",
-    "option2": "Corrosion that forms small pits or craters on the metal surface",
-    "option3": "Corrosion caused by chemical reactions with water",
-    "option4": "Corrosion caused by exposure to extreme temperatures",
-    "answer": 2
+    "Question": "What is pitting corrosion?",
+    "Option1": "Corrosion that occurs uniformly over the entire surface of a metal",
+    "Option2": "Corrosion that forms small pits or craters on the metal surface",
+    "Option3": "Corrosion caused by chemical reactions with water",
+    "Option4": "Corrosion caused by exposure to extreme temperatures",
+    "CorrectOption": 2
   },
   
   {
-    "question": "What is the primary factor that determines the rate of corrosion?",
-    "option1": "Temperature",
-    "option2": "Pressure",
-    "option3": "Humidity",
-    "option4": "Metal hardness",
-    "answer": 1
+    "Question": "What is the primary factor that determines the rate of corrosion?",
+    "Option1": "Temperature",
+    "Option2": "Pressure",
+    "Option3": "Humidity",
+    "Option4": "Metal hardness",
+    "CorrectOption": 1
   },
   
   {
-    "question": "Which metal is commonly used for sacrificial anodes in cathodic protection systems?",
-    "option1": "Aluminum",
-    "option2": "Copper",
-    "option3": "Zinc",
-    "option4": "Stainless steel",
-    "answer": 3
+    "Question": "Which metal is commonly used for sacrificial anodes in cathodic protection systems?",
+    "Option1": "Aluminum",
+    "Option2": "Copper",
+    "Option3": "Zinc",
+    "Option4": "Stainless steel",
+    "CorrectOption": 3
   },
   
   {
-    "question": "What is the term for the corrosion of iron specifically?",
-    "option1": "Rusting",
-    "option2": "Tarnishing",
-    "option3": "Oxidizing",
-    "option4": "Corroding",
-    "answer": 1
+    "Question": "What is the term for the corrosion of iron specifically?",
+    "Option1": "Rusting",
+    "Option2": "Tarnishing",
+    "Option3": "Oxidizing",
+    "Option4": "Corroding",
+    "CorrectOption": 1
   }
 ]
-  

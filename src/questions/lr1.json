@@ -1,0 +1,129 @@
+[
+    {
+      "Question": "In linear regression, what is the primary goal?",
+      "Option1": "Minimize the sum of squared residuals",
+      "Option2": "Maximize the R-squared value",
+      "Option3": "Minimize the intercept term",
+      "Option4": "Maximize the number of predictors",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What type of relationship is linear regression used to model?",
+      "Option1": "Linear relationship between independent and dependent variables",
+      "Option2": "Non-linear relationship between independent and dependent variables",
+      "Option3": "Binary classification",
+      "Option4": "Categorical data",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "Which term represents the error term in a linear regression equation?",
+      "Option1": "Residuals",
+      "Option2": "Predictors",
+      "Option3": "Coefficients",
+      "Option4": "Intercept",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What does the slope of the regression line represent?",
+      "Option1": "Change in the dependent variable for a one-unit change in the independent variable",
+      "Option2": "Change in the intercept term",
+      "Option3": "The R-squared value",
+      "Option4": "The error term",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What is the formula for the simple linear regression model?",
+      "Option1": "y = β0 + β1x + ε",
+      "Option2": "y = β0 + β1x",
+      "Option3": "y = α0 + α1x + ε",
+      "Option4": "y = α0 + α1x",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What is the method used to estimate the regression coefficients in linear regression?",
+      "Option1": "Least Squares Method",
+      "Option2": "Maximum Likelihood Estimation",
+      "Option3": "Gradient Descent",
+      "Option4": "ANOVA",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What is the purpose of the intercept term in linear regression?",
+      "Option1": "To account for the mean value of the dependent variable when all predictors are zero",
+      "Option2": "To adjust the scale of the dependent variable",
+      "Option3": "It is not required in linear regression",
+      "Option4": "To minimize the residuals",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What is the range of possible values for the R-squared coefficient?",
+      "Option1": "0 to 1",
+      "Option2": "1 to ∞",
+      "Option3": "0 to -1",
+      "Option4": "0 to ∞",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What does a high R-squared value indicate in linear regression?",
+      "Option1": "A high proportion of the variance in the dependent variable is explained by the independent variable(s)",
+      "Option2": "A high proportion of the variance is due to error",
+      "Option3": "The model is overfitting the data",
+      "Option4": "The model is biased",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What is the name of the assumption that the residuals in linear regression are normally distributed?",
+      "Option1": "Normality Assumption",
+      "Option2": "Homoscedasticity Assumption",
+      "Option3": "Independence Assumption",
+      "Option4": "Linearity Assumption",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What does multicollinearity refer to in linear regression?",
+      "Option1": "High correlation between independent variables",
+      "Option2": "Low correlation between independent variables",
+      "Option3": "The number of observations in the dataset",
+      "Option4": "The error term in the regression equation",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What is the common way to assess the model's performance in linear regression?",
+      "Option1": "Mean Squared Error (MSE)",
+      "Option2": "Sum of Squared Residuals",
+      "Option3": "Coefficient of Determination (R-squared)",
+      "Option4": "Maximum Likelihood Estimation (MLE)",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "What is the coefficient of determination, R-squared, used to measure?",
+      "Option1": "The proportion of the variance in the dependent variable explained by the independent variables",
+      "Option2": "The p-value of the coefficients",
+      "Option3": "The total number of data points",
+      "Option4": "The correlation between two predictors",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    },
+    {
+      "Question": "Which diagnostic plot is used to check for homoscedasticity in linear regression?",
+      "Option1": "Residuals vs. Fitted plot",
+      "Option2": "Normal Q-Q plot",
+      "Option3": "Histogram of Residuals",
+      "Option4": "Scatterplot of Predicted vs. Residuals",
+      "CorrectOption": 1,
+      "Topic": "Linear Regression"
+    }
+  ]
+  

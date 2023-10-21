@@ -1,0 +1,129 @@
+[
+    {
+      "Question": "What is the primary goal of clustering in unsupervised learning?",
+      "Option1": "To group similar data points into clusters",
+      "Option2": "To classify data points into predefined categories",
+      "Option3": "To predict a target variable",
+      "Option4": "To find the best-fit line in a scatterplot",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "Which unsupervised learning technique is commonly used for clustering?",
+      "Option1": "K-Means Clustering",
+      "Option2": "Linear Regression",
+      "Option3": "Decision Trees",
+      "Option4": "Support Vector Machines",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "In K-Means Clustering, how are data points assigned to clusters?",
+      "Option1": "By minimizing the sum of squared distances between data points and cluster centroids",
+      "Option2": "By maximizing the correlation between features",
+      "Option3": "By sorting data points in ascending order",
+      "Option4": "By randomly assigning data points to clusters",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "What is the value of K in K-Means Clustering?",
+      "Option1": "The number of clusters to be formed",
+      "Option2": "The number of data points in the dataset",
+      "Option3": "The mean of the data points",
+      "Option4": "The standard deviation of the data points",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "What distance metric is commonly used in K-Means Clustering?",
+      "Option1": "Euclidean Distance",
+      "Option2": "Manhattan Distance",
+      "Option3": "Cosine Similarity",
+      "Option4": "Hamming Distance",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "What is hierarchical clustering?",
+      "Option1": "A clustering technique that builds a hierarchy of clusters",
+      "Option2": "A clustering technique that uses K-Means exclusively",
+      "Option3": "A clustering technique for binary classification",
+      "Option4": "A clustering technique that requires labeled data",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "What is the purpose of a dendrogram in hierarchical clustering?",
+      "Option1": "To visualize the hierarchy of clusters",
+      "Option2": "To calculate the Euclidean distance",
+      "Option3": "To label data points",
+      "Option4": "To fit a regression model",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "What is a disadvantage of hierarchical clustering?",
+      "Option1": "It is computationally expensive for large datasets",
+      "Option2": "It always produces better results than K-Means clustering",
+      "Option3": "It requires a predefined number of clusters",
+      "Option4": "It can only be applied to text data",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "What is the goal of DBSCAN (Density-Based Spatial Clustering of Applications with Noise)?",
+      "Option1": "To find clusters of arbitrary shapes based on data density",
+      "Option2": "To fit a linear regression model",
+      "Option3": "To perform binary classification",
+      "Option4": "To calculate the p-value",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "Which of the following is a drawback of the K-Means clustering algorithm?",
+      "Option1": "It requires specifying the number of clusters (K) in advance",
+      "Option2": "It is computationally efficient for large datasets",
+      "Option3": "It can handle high-dimensional data well",
+      "Option4": "It doesn't use distance metrics",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "What does the term 'silhouette score' measure in clustering?",
+      "Option1": "The quality of a clustering solution",
+      "Option2": "The number of clusters",
+      "Option3": "The variance of data points",
+      "Option4": "The accuracy of classification",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "What is the Silhouette score range?",
+      "Option1": "Between -1 and 1",
+      "Option2": "Between 0 and 100",
+      "Option3": "Between 1 and 10",
+      "Option4": "Between 0 and 1",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "Which clustering algorithm is based on the concept of medoids?",
+      "Option1": "K-Medoids",
+      "Option2": "K-Means",
+      "Option3": "Hierarchical Clustering",
+      "Option4": "DBSCAN",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    },
+    {
+      "Question": "In clustering, what does the term 'centroid' refer to?",
+      "Option1": "The center point of a cluster",
+      "Option2": "The farthest data point from the cluster center",
+      "Option3": "A type of distance metric",
+      "Option4": "A machine learning library",
+      "CorrectOption": 1,
+      "Topic": "Unsupervised Learning - Clustering"
+    }
+  ]
+  

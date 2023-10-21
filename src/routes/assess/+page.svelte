@@ -5,11 +5,15 @@
     import { onMount } from "svelte";
     import corrq from '../../questions/questions.json';
     import electr from '../../questions/questionse.json';
+    import lr1 from '../../questions/lr1.json'
+    import lr2 from '../../questions/lr2.json'
+    import clus from '../../questions/clustering.json'
     import cheme from '../../questions/questionschem.json';
     import Bars from "../../lib/components/bars.svelte";
     import Radio from '../../lib/components/Radio.svelte';
+    let correctans;
 
-    let formattedTime = "20:00"; // Initialize formattedTime with the starting time
+    let formattedTime = "20:00"; 
     let i = 0;
     let group = 0;
 
@@ -38,24 +42,6 @@
         }
         sub = 1;
     };
-
-    let onclicktop = (topic) => {
-        valtop = topic;
-        sub = 2;
-        let countdown = 1200;
-        const timer = setInterval(() => {
-            if (countdown > 0) {
-                const minutes = Math.floor(countdown / 60);
-                const seconds = countdown % 60;
-                formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-                countdown -= 1;
-            }
-        }, 1000);
-    }
-    let handleNext = ()=>{
-        group = 0;
-        i++;
-    }
 </script>
 
 <main>
@@ -68,9 +54,9 @@
     {#if sub == 1}
     <h1>select your topic:</h1>
     {#if val === "Chemistry"}
-    <a href="#" on:click={() => onclicktop("corrosion")}>corrosion <br></a>
-    <a href="#" on:click={() => onclicktop("electro")}>electrochemistry <br></a>
-    <a href="#" on:click={() => onclicktop("battech")}>battery Tech <br></a>
+    <a href="/corrosion" >corrosion <br></a>
+    <a href="/electro" >electrochemistry <br></a>
+    <a href="/battech" >battery Tech <br></a>
     {/if}
     {#if val === "Physics"}
     <a href="#">ray optics <br></a>
@@ -78,9 +64,9 @@
     <a href="#">hmmmm <br></a>
     {/if}
     {#if val === "Ml"}
-    <a href="#">Linear Regression <br></a>
-    <a href="#">Logistic regression <br></a>
-    <a href="#">Clustering <br></a>
+    <a href="/lr" on:click={() => onclicktop("lr")}>Linear Regression <br></a>
+    <a href="/lr2"on:click={() => onclicktop("lr2")}>Logistic regression <br></a>
+    <a href="/cluster" on:click={() => onclicktop("cluster")}>Clustering <br></a>
     {/if}
     {/if}
     {#if sub === 2}
@@ -109,6 +95,33 @@
     <Radio bind:group value={2}>{cheme[i].Option2}</Radio> <br>
     <Radio bind:group value={3}>{cheme[i].Option3}</Radio> <br>
     <Radio bind:group value={4}>{cheme[i].Option4}</Radio> <br>
+    <button type="button" on:click={handleNext}>next</button>
+    {/if}
+    {#if valtop === "lr"}
+    <h1>{formattedTime}</h1>
+    <h1>{lr1[i].Question}</h1>
+    <Radio bind:group value={1}>{lr1[i].Option1}</Radio> <br>
+    <Radio bind:group value={2}>{lr1[i].Option2}</Radio> <br>
+    <Radio bind:group value={3}>{lr1[i].Option3}</Radio> <br>
+    <Radio bind:group value={4}>{lr1[i].Option4}</Radio> <br>
+    <button type="button" on:click={handleNext}>next</button>
+    {/if}
+    {#if valtop === "lr2"}
+    <h1>{formattedTime}</h1>
+    <h1>{lr2[i].Question}</h1>
+    <Radio bind:group value={1}>{lr2[i].Option1}</Radio> <br>
+    <Radio bind:group value={2}>{lr2[i].Option2}</Radio> <br>
+    <Radio bind:group value={3}>{lr2[i].Option3}</Radio> <br>
+    <Radio bind:group value={4}>{lr2[i].Option4}</Radio> <br>
+    <button type="button" on:click={handleNext}>next</button>
+    {/if}
+    {#if valtop === "cluster"}
+    <h1>{formattedTime}</h1>
+    <h1>{clus[i].Question}</h1>
+    <Radio bind:group value={1}>{clus[i].Option1}</Radio> <br>
+    <Radio bind:group value={2}>{clus[i].Option2}</Radio> <br>
+    <Radio bind:group value={3}>{clus[i].Option3}</Radio> <br>
+    <Radio bind:group value={4}>{clus[i].Option4}</Radio> <br>
     <button type="button" on:click={handleNext}>next</button>
     {/if}
     {/if}

@@ -31,6 +31,12 @@ window.location.href = "room";  }
   navigator.clipboard.writeText(user.uid);
 }
 });
+let upload = async(topic) =>{
+  await setDoc(doc(db, "topicselected","one"), {
+    "selected":topic
+})
+}
+
 
 
 </script>
@@ -46,6 +52,16 @@ window.location.href = "room";  }
         </svg>
       </button>
     </div>
+    <ul>
+      <a on:click={() => upload("electrochem")} >Electrochemistry</a>
+      <a on:click={() => upload("corrosion")}>Corrosion</a>
+  </ul>
+
+  <h3>Machine Learning</h3>
+  <ul>
+      <a on:click={() => upload("linear")}>Linear Regression</a>
+      <a on:click={() => upload("logisitc")}>Logistic Regression</a>
+  </ul>
     {/if}
 </main>
 
