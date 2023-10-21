@@ -19,8 +19,8 @@
             V A U L T
         </div>
         <div class="flex flex-row items-center ">
-            <img src={coin} class="h-auto w-[5vw]" alt=""/>
-            <p class="text-[3.333vw] font-['MerriWeather'] text-white">{current}/{coins}</p>
+           
+            
         </div>
         <div class="">
             <img src={money} class="w-[16vw] h-auto" alt=""/>
