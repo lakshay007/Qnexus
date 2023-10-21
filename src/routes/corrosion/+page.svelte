@@ -21,7 +21,7 @@ import { db } from "../../firebase1/firebaseConfig";
 
     })
     let handleNext = () =>{
-        if(corrq[i].answer == group){
+        if(corrq[i].CorrectOption == group){
             correctans++;
         }
         i++;
@@ -30,11 +30,11 @@ import { db } from "../../firebase1/firebaseConfig";
 <main>
     {#if timerloaded ==1}
     <h1>{formattedTime}</h1>
-    <h1>{corrq[i].question}</h1>
-    <Radio bind:group value={1}>{corrq[i].option1}</Radio> <br>
-    <Radio bind:group value={2}>{corrq[i].option2}</Radio> <br>
-    <Radio bind:group value={3}>{corrq[i].option3}</Radio> <br>
-    <Radio bind:group value={4}>{corrq[i].option4}</Radio> <br>
+    <h1>{corrq[i].Question}</h1>
+    <Radio bind:group value={1}>{corrq[i].Option1}</Radio> <br>
+    <Radio bind:group value={2}>{corrq[i].Option2}</Radio> <br>
+    <Radio bind:group value={3}>{corrq[i].Option3}</Radio> <br>
+    <Radio bind:group value={4}>{corrq[i].Option4}</Radio> <br>
     <button type="button" on:click={handleNext}>next</button>
     {/if}
 </main>
