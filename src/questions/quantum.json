@@ -1,0 +1,137 @@
+[
+  {
+    "Question": "Who is known for formulating the Schrödinger equation?",
+    "Option1": "Albert Einstein",
+    "Option2": "Werner Heisenberg",
+    "Option3": "Erwin Schrödinger",
+    "Option4": "Max Planck",
+    "CorrectOption": 3,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "What does the term 'quantization' refer to in quantum physics?",
+    "Option1": "The process of measuring quantum properties",
+    "Option2": "The discretization of energy levels",
+    "Option3": "The process of quantum entanglement",
+    "Option4": "The random behavior of quantum particles",
+    "CorrectOption": 2,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "Which of the following is considered a fundamental principle of quantum mechanics?",
+    "Option1": "Wave-particle duality",
+    "Option2": "Principle of relativity",
+    "Option3": "Theory of relativity",
+    "Option4": "Newton's laws of motion",
+    "CorrectOption": 1,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "What is the term for the smallest indivisible unit of energy in quantum physics?",
+    "Option1": "Planck constant",
+    "Option2": "Quantum leap",
+    "Option3": "Photon",
+    "Option4": "Quantum",
+    "CorrectOption": 1,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "Which particle is associated with the Heisenberg Uncertainty Principle?",
+    "Option1": "Electron",
+    "Option2": "Proton",
+    "Option3": "Neutron",
+    "Option4": "Photon",
+    "CorrectOption": 1,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "What is the phenomenon where two entangled particles can affect each other's state instantaneously, regardless of distance?",
+    "Option1": "Quantization",
+    "Option2": "Quantum leap",
+    "Option3": "Quantum entanglement",
+    "Option4": "Quantum tunneling",
+    "CorrectOption": 3,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "Who developed the uncertainty principle in quantum mechanics?",
+    "Option1": "Wolfgang Pauli",
+    "Option2": "Niels Bohr",
+    "Option3": "Max Planck",
+    "Option4": "Werner Heisenberg",
+    "CorrectOption": 4,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "What is the term for a quantum process where particles pass through a classically-forbidden energy barrier?",
+    "Option1": "Quantum leap",
+    "Option2": "Quantum entanglement",
+    "Option3": "Quantum tunneling",
+    "Option4": "Quantization",
+    "CorrectOption": 3,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "In quantum mechanics, what is the concept of superposition?",
+    "Option1": "The collapse of a wave function",
+    "Option2": "The addition of amplitudes for multiple quantum states",
+    "Option3": "The concept of wave-particle duality",
+    "Option4": "The Heisenberg Uncertainty Principle",
+    "CorrectOption": 2,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "What is the fundamental unit of charge according to quantum physics?",
+    "Option1": "Coulomb",
+    "Option2": "Electron volt",
+    "Option3": "Planck charge",
+    "Option4": "Elementary charge",
+    "CorrectOption": 4,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "Which experiment provided experimental evidence for the wave-particle duality of particles?",
+    "Option1": "Compton scattering",
+    "Option2": "Double-slit experiment",
+    "Option3": "Photoelectric effect",
+    "Option4": "Stern-Gerlach experiment",
+    "CorrectOption": 2,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "Who formulated the Planck's quantum theory, which introduced the concept of quantization?",
+    "Option1": "Niels Bohr",
+    "Option2": "Werner Heisenberg",
+    "Option3": "Max Planck",
+    "Option4": "Albert Einstein",
+    "CorrectOption": 3,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "What is the term for the process by which quantum particles penetrate a potential energy barrier?",
+    "Option1": "Quantization",
+    "Option2": "Quantum leap",
+    "Option3": "Quantum tunneling",
+    "Option4": "Quantum entanglement",
+    "CorrectOption": 3,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "What is the term for the behavior of particles that can exist in multiple states at the same time?",
+    "Option1": "Quantum leap",
+    "Option2": "Quantum superposition",
+    "Option3": "Quantum tunneling",
+    "Option4": "Quantum entanglement",
+    "CorrectOption": 2,
+    "Topic": "Quantum Physics"
+  },
+  {
+    "Question": "Who proposed the concept of wave-particle duality?",
+    "Option1": "Max Planck",
+    "Option2": "Niels Bohr",
+    "Option3": "Werner Heisenberg",
+    "Option4": "Louis de Broglie",
+    "CorrectOption": 4,
+    "Topic": "Quantum Physics"
+  }
+]

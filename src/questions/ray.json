@@ -1,0 +1,137 @@
+[
+  {
+    "Question": "Which of the following best describes the behavior of light when it passes from one medium to another with a higher refractive index?",
+    "Option1": "Light speeds up",
+    "Option2": "Light bends away from the normal",
+    "Option3": "Light slows down",
+    "Option4": "Light bends towards the normal",
+    "CorrectOption": 4,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "What is the phenomenon where light is deviated due to the change in speed as it passes from one medium to another?",
+    "Option1": "Reflection",
+    "Option2": "Diffraction",
+    "Option3": "Refraction",
+    "Option4": "Dispersion",
+    "CorrectOption": 3,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "In the context of ray optics, what is the normal line?",
+    "Option1": "A straight line perpendicular to the surface of a medium",
+    "Option2": "A line connecting the observer's eye to the object",
+    "Option3": "A line perpendicular to the direction of light propagation",
+    "Option4": "A line connecting the source of light to the object",
+    "CorrectOption": 1,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "Which of the following phenomena is responsible for the formation of a rainbow?",
+    "Option1": "Refraction",
+    "Option2": "Reflection",
+    "Option3": "Interference",
+    "Option4": "Diffraction",
+    "CorrectOption": 1,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "What is the focal point of a converging lens?",
+    "Option1": "The point where parallel rays of light converge after passing through the lens",
+    "Option2": "The point where the lens intersects the optical axis",
+    "Option3": "The point where the object is located",
+    "Option4": "The point where the lens focuses light to create a real image",
+    "CorrectOption": 1,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "When light travels from air into a glass medium, which of the following occurs?",
+    "Option1": "Light speeds up",
+    "Option2": "Light slows down",
+    "Option3": "Light becomes brighter",
+    "Option4": "Light becomes invisible",
+    "CorrectOption": 2,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "Which optical phenomenon occurs when a wave spreads as it encounters an obstacle or aperture?",
+    "Option1": "Refraction",
+    "Option2": "Reflection",
+    "Option3": "Interference",
+    "Option4": "Diffraction",
+    "CorrectOption": 4,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "What is the angle of incidence for light traveling along the normal line?",
+    "Option1": "0 degrees",
+    "Option2": "45 degrees",
+    "Option3": "90 degrees",
+    "Option4": "180 degrees",
+    "CorrectOption": 1,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "In the context of lenses, what does the term 'focal length' refer to?",
+    "Option1": "The length of the lens",
+    "Option2": "The distance between the lens and the object",
+    "Option3": "The distance between the lens and the image",
+    "Option4": "The distance at which parallel rays converge or appear to diverge",
+    "CorrectOption": 4,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "What type of image is formed by a diverging lens when the object is placed beyond the focal point?",
+    "Option1": "Real and inverted",
+    "Option2": "Virtual and erect",
+    "Option3": "Real and erect",
+    "Option4": "Virtual and inverted",
+    "CorrectOption": 2,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "What is the angle of reflection when a light ray strikes a reflective surface at an angle of 30 degrees?",
+    "Option1": "0 degrees",
+    "Option2": "15 degrees",
+    "Option3": "30 degrees",
+    "Option4": "60 degrees",
+    "CorrectOption": 3,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "In the context of lenses, what is the image formed when an object is placed between the focal point and the lens?",
+    "Option1": "Real and inverted",
+    "Option2": "Virtual and erect",
+    "Option3": "Real and erect",
+    "Option4": "Virtual and inverted",
+    "CorrectOption": 4,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "What is the angle of refraction when a light ray passes from air into water at an angle of 45 degrees to the normal?",
+    "Option1": "0 degrees",
+    "Option2": "45 degrees",
+    "Option3": "60 degrees",
+    "Option4": "30 degrees",
+    "CorrectOption": 3,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "What is the term for the bending of light waves as they pass around an obstacle or through a narrow slit?",
+    "Option1": "Refraction",
+    "Option2": "Reflection",
+    "Option3": "Interference",
+    "Option4": "Diffraction",
+    "CorrectOption": 4,
+    "Topic": "Ray Optics"
+  },
+  {
+    "Question": "In the context of mirrors, what type of mirror is capable of forming both real and virtual images, depending on the object's location?",
+    "Option1": "Concave mirror",
+    "Option2": "Convex mirror",
+    "Option3": "Plane mirror",
+    "Option4": "Spherical mirror",
+    "CorrectOption": 1,
+    "Topic": "Ray Optics"
+  }
+]
