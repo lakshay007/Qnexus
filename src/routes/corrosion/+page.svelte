@@ -24,10 +24,18 @@ import { db } from "../../firebase1/firebaseConfig";
         if(corrq[i].CorrectOption == group){
             correctans++;
         }
+        group = 0;
         i++;
     }
+    let handlesubmit = () =>{
+            if(corrq[i].CorrectOption == group){
+                correctans++;
+            }
+            submitted = 1;
+        }
 </script>
 <main>
+    {#if submitted ==0}
     {#if timerloaded ==1}
     <h1>{formattedTime}</h1>
     <h1>{corrq[i].Question}</h1>
@@ -36,12 +44,16 @@ import { db } from "../../firebase1/firebaseConfig";
     <Radio bind:group value={3}>{corrq[i].Option3}</Radio> <br>
     <Radio bind:group value={4}>{corrq[i].Option4}</Radio> <br>
     {#if i==14}
-    <button type="button" on:click={handleNext}>submit</button>
+    <button type="button" on:click={handlesubmit}>submit</button>
     {/if}
     {#if i<14}
     <button type="button" on:click={handleNext}>next</button>
     {/if}
         {/if}
+        {/if}
+        {#if submitted == 1}
+            <h1>you were able to answer {correctans} questions correctly</h1>
+            {/if}
 </main>
 <style>
     
