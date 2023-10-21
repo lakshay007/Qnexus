@@ -6,6 +6,7 @@ import { db } from "../../firebase1/firebaseConfig";
     import Radio from '../../lib/components/Radio.svelte';
     import corrq from '../../questions/questions.json';
     let group = 0,formattedTime,i=0,correctans = 0,submitted = 0;
+    let wrongans = [];
     let timerloaded = 0;
     onMount(async()=>{
         let countdown = 1200;
@@ -20,9 +21,13 @@ import { db } from "../../firebase1/firebaseConfig";
         }, 1000);
 
     })
+    let j = 0;
     let handleNext = () =>{
         if(corrq[i].CorrectOption == group){
             correctans++;
+        }
+        else{
+            wrongans[j++] = corrq[i];
         }
         group = 0;
         i++;
@@ -63,9 +68,15 @@ import { db } from "../../firebase1/firebaseConfig";
     {#if submitted==1}
     <div class="h-screen w-screen flex flex-col grow items-center justify-center">
         <p class="text-white text-4xl m-4 lowercase" style="font-family:'Share Tech Mono';">you were able to answer {correctans} questions correctly</p>
+
         <a href="/dashboard">
             <button class="btn btn-error">RETURN TO DASHBOARD</button>
         </a>
+        <h1>your incorrect/unattempted questions:</h1>
+        {#each wrongans as { Question, CorrectOption }, i}
+        <h1>{Question}</h1>
+        <h1>correctans: {wrongans[i]["Option"+CorrectOption]}</h1>
+        {/each}
     </div>
     {/if}
 </main>

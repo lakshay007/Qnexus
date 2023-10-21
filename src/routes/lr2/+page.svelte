@@ -7,6 +7,7 @@
         import cheme from '../../questions/lr2.json';
         let group = 0,formattedTime,i=0,correctans = 0, submitted = 0;
         let timerloaded = 0;
+        let j = 0; let wrongans = [];
         onMount(async()=>{
             let countdown = 1200;
             const timer = setInterval(() => {
@@ -24,6 +25,9 @@
             if(cheme[i].CorrectOption == group){
                 correctans++;
             }
+            else{
+            wrongans[j++] = cheme[i];
+        }
             group = 0;
             i++;
         }
@@ -63,9 +67,15 @@
         {#if submitted==1}
         <div class="h-screen w-screen flex flex-col grow items-center justify-center">
             <p class="text-white text-4xl m-4 lowercase" style="font-family:'Share Tech Mono';">you were able to answer {correctans} questions correctly</p>
+    
             <a href="/dashboard">
                 <button class="btn btn-error">RETURN TO DASHBOARD</button>
             </a>
+            <h1>your incorrect/unattempted questions:</h1>
+            {#each wrongans as { Question, CorrectOption }, i}
+            <h1>{Question}</h1>
+            <h1>correctans: {wrongans[i]["Option"+CorrectOption]}</h1>
+            {/each}
         </div>
         {/if}
     </main>
