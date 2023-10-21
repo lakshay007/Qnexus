@@ -2,6 +2,7 @@
     export let image = "../../assets/coupon.jpg";
     export let text = "Hello";
     export let price = 0;
+    export let stock = 0;
     import coin from "../../assets/coin.png";
     import { db } from "../../firebase1/firebaseConfig";
     import { doc, setDoc,updateDoc,addDoc,getDoc,onSnapshot,deleteDoc} from "firebase/firestore"; 
@@ -52,6 +53,10 @@
         <p class="text-[1.25vw] text-white">{price}</p>
     </div>
     <div>
-        <button on:click={handleredeem} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
+        {#if stock == 0}
+            <p class="text-white font-['MerriWeather']">Stock is out!</p>
+        {:else}
+            <button on:click={handleredeem} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
+        {/if}
     </div>
 </div>
