@@ -9,9 +9,62 @@
     import tshirt from "../../assets/mitTshirt.jpg";
     import hoodie from "../../assets/mitHoodie.jpg";
     import { db } from "../../firebase1/firebaseConfig";
-    import { doc, setDoc,updateDoc,addDoc,getDoc,onSnapshot,deleteDoc} from "firebase/firestore"; 
+    import { doc , setDoc, updateDoc, addDoc, getDoc, onSnapshot, deleteDoc,collection, query, where,getDocs, increment, orderBy, limit} from "firebase/firestore"; 
     import { getAuth, onAuthStateChanged } from "firebase/auth";
     import { onMount } from "svelte";
+    let redval,notenoughcoins,x,ref,loaded = 0,x1,ref1;
+    const data = [];
+    const auth = getAuth();
+    onMount( async()=>{
+        
+        let docref = collection(db, "items");
+    
+    const q = query(docref, where("count", ">=",-100),limit(100));
+        await getDocs(q)
+        .then(async(querySnapshot) => {
+        querySnapshot.forEach(async(docreff) => {
+        data.push( docreff.data());
+
+    });
+    loaded  = 1;
+   
+})
+console.log(data);
+})
+let handleredeem = async(itemnum)=>{
+        onAuthStateChanged(auth, async(user) => {
+  if (user) { 
+        x = doc(db,"playerprofiles", user.uid);
+     ref = await getDoc(x);
+     x1 = doc(db,"items", data[itemnum].name);
+     ref1 = await getDoc(x1);
+     let cnt = data[itemnum].count;
+     if(ref.data().playercoins>=ref1.data().price){
+        alert("purchase successful");
+        notenoughcoins = 0;
+        let newcoins=ref.data().playercoins-ref1.data().price;
+        setDoc(x, {
+       playercoins: newcoins
+},{ merge: true });
+setDoc(x1, {
+       count: cnt-1
+},{ merge: true });
+onAuthStateChanged(auth, async(user) => {
+  if (user) { 
+await setDoc(doc(db, "orders", user.uid), {
+  [data[itemnum].name]:increment(1)
+},{merge:true});  
+  }})
+}
+     else{
+        notenoughcoins = 1;
+     }
+
+  }
+})
+
+    }
+
     
 </script>
 <style>
@@ -41,18 +94,23 @@
                 <img id="productimg" src={coupon} class="h-50 w-auto rounded-lg" alt="" />
             </div>
             <div>
-                <p class="text-[1.5vw] font-['MerriWeather'] text-white">Coupon at max</p>
+                {#if loaded == 1}
+                <p class="text-[1.5vw] font-['MerriWeather'] text-white">{data[3].name}</p>
+                {/if}
             </div>
             <div class="flex flex-row items-center mb-[1.5vh] gap-x-[0.5vw]">
+                {#if loaded == 1}
                 <img src={coin} class="h-15 w-10" alt=""/>
-                <p class="text-[1.25vw] text-white">100</p>
+                <p class="text-[1.25vw] text-white">{data[3].price}</p>
+                {/if}
+                
             </div>
             <div>
                 <!-- {#if stock == 0}
                     <p class="text-white font-['MerriWeather']">Stock is out!</p>
-                {:else}
-                    <button on:click={handleredeem} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
-                {/if} -->
+                {:else} -->
+                    <button on:click={() => handleredeem(3)} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
+                <!-- {/if} -->
             </div>
         </div>
         <div class="flex flex-col items-center">
@@ -60,56 +118,68 @@
                 <img id="productimg" src={food} class="h-50 w-auto rounded-lg" alt="" />
             </div>
             <div>
-                <p class="text-[1.5vw] font-['MerriWeather'] text-white">Food Coupon FC</p>
+                {#if loaded == 1}
+                <p class="text-[1.5vw] font-['MerriWeather'] text-white">{data[2].name}</p>
+                {/if}
             </div>
+            
             <div class="flex flex-row items-center mb-[1.5vh] gap-x-[0.5vw]">
+                {#if loaded == 1}
                 <img src={coin} class="h-15 w-10" alt=""/>
-                <p class="text-[1.25vw] text-white">300</p>
+                <p class="text-[1.25vw] text-white">{data[2].price}</p>
+                {/if}
+                
             </div>
             <div>
                 <!-- {#if stock == 0}
                     <p class="text-white font-['MerriWeather']">Stock is out!</p>
-                {:else}
-                    <button on:click={handleredeem} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
-                {/if} -->
+                {:else} -->
+                    <button on:click={() => handleredeem(2)} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
+                <!-- {/if} -->
             </div>
         </div>
         <div class="flex flex-col items-center">
             <div id="product" class="mb-[2vh]"> 
                 <img id="productimg" src={tshirt} class="h-50 w-auto rounded-lg" alt="" />
             </div>
-            <div>
-                <p class="text-[1.5vw] font-['MerriWeather'] text-white">MIT TShirt</p>
-            </div>
+            {#if loaded == 1}
+                <p class="text-[1.5vw] font-['MerriWeather'] text-white">{data[1].name}</p>
+                {/if}
+                
             <div class="flex flex-row items-center mb-[1.5vh] gap-x-[0.5vw]">
+                {#if loaded == 1}
                 <img src={coin} class="h-15 w-10" alt=""/>
-                <p class="text-[1.25vw] text-white">700</p>
+                <p class="text-[1.25vw] text-white">{data[1].price}</p>
+                {/if}
+                
             </div>
             <div>
                 <!-- {#if stock == 0}
                     <p class="text-white font-['MerriWeather']">Stock is out!</p>
-                {:else}
-                    <button on:click={handleredeem} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
-                {/if} -->
+                {:else} -->
+                    <button on:click={() => handleredeem(1)} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
+                <!-- {/if} -->
             </div>
         </div>
         <div class="flex flex-col items-center">
             <div id="product" class="mb-[2vh]"> 
                 <img id="productimg" src={hoodie} class="h-50 w-auto rounded-lg" alt="" />
             </div>
-            <div>
-                <p class="text-[1.5vw] font-['MerriWeather'] text-white">MIT Hoodie</p>
-            </div>
+            {#if loaded == 1}
+                <p class="text-[1.5vw] font-['MerriWeather'] text-white">{data[0].name}</p>
+                {/if}
             <div class="flex flex-row items-center mb-[1.5vh] gap-x-[0.5vw]">
+                {#if loaded == 1}
                 <img src={coin} class="h-15 w-10" alt=""/>
-                <p class="text-[1.25vw] text-white">1000</p>
+                <p class="text-[1.25vw] text-white">{data[0].price}</p>
+                {/if}
             </div>
             <div>
                 <!-- {#if stock == 0}
                     <p class="text-white font-['MerriWeather']">Stock is out!</p>
-                {:else}
-                    <button on:click={handleredeem} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
-                {/if} -->
+                {:else} -->
+                    <button on:click={() => handleredeem(0)} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
+                <!-- {/if} -->
             </div>
         </div>
     </div>
