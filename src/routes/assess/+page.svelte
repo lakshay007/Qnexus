@@ -113,9 +113,9 @@
     </div>
     {/if}
     {#if val === "Ml"}
-    <a href="/lr" on:click={() => onclicktop("lr")}>Linear Regression <br></a>
-    <a href="/lr2"on:click={() => onclicktop("lr2")}>Logistic regression <br></a>
-    <a href="/cluster" on:click={() => onclicktop("cluster")}>Clustering <br></a>
+    <a href="/lr" >Linear Regression <br></a>
+    <a href="/lr2">Logistic regression <br></a>
+    <a href="/cluster" >Clustering <br></a>
     {/if}
     {#if sub === 2}
     {#if valtop === "corrosion"}

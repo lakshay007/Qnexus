@@ -58,7 +58,6 @@ await getDocs(q)
     querySnapshot.forEach(async(docreff) => {
       dataArray.push( docreff.data());
       console.log("ho");
-      
    unsubscribe(); });
 })
 

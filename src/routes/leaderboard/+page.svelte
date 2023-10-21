@@ -1,6 +1,6 @@
 <script>
 import { db } from "../../firebase1/firebaseConfig";
-import { doc , setDoc, updateDoc, addDoc, getDoc, onSnapshot, deleteDoc,collection, query, where,getDocs, increment } from "firebase/firestore";
+import { doc , setDoc, updateDoc, addDoc, getDoc, onSnapshot, deleteDoc,collection, query, where,getDocs, increment, orderBy, limit } from "firebase/firestore";
     import { getAuth, onAuthStateChanged } from "firebase/auth";
     import { onMount } from "svelte";
     import { writable } from 'svelte/store'
@@ -18,22 +18,13 @@ const auth = getAuth();
                 yocoins = x.data().credits;
                 
             }})
-        const q = query(docref,where("playercoins",">=",0) );
+        const q = query(docref,orderBy("playercoins", "desc"),limit(100));
         await getDocs(q)
         .then(async(querySnapshot) => {
         querySnapshot.forEach(async(docreff) => {
         data.push( docreff.data());
     });
-        for(let i = 0;i<data.length-1;i++){
-            for(let j = 0;j<data.length-i-1;j++){
-                if(data[j].credits<data[j+1].credits){
-                    let temp = data[j];
-                    data[j] = data[j+1];
-                    data[j+1] = temp;
-                }
-            }
-        }
-        console.log(data);
+        
 
       
    
