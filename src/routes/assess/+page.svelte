@@ -117,7 +117,6 @@
     <a href="/lr2"on:click={() => onclicktop("lr2")}>Logistic regression <br></a>
     <a href="/cluster" on:click={() => onclicktop("cluster")}>Clustering <br></a>
     {/if}
-    {/if}
     {#if sub === 2}
     {#if valtop === "corrosion"}
     <h1>{formattedTime}</h1>
