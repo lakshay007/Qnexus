@@ -11,6 +11,13 @@
     import cheme from '../../questions/questionschem.json';
     import Bars from "../../lib/components/bars.svelte";
     import Radio from '../../lib/components/Radio.svelte';
+    import physics from "../../assets/physics.jpeg";
+    import chem from "../../assets/chem.jpeg";
+    import ml from "../../assets/ML.jpeg";
+    import corrosion from "../../assets/corrosion.jpg";
+    import electro from "../../assets/electrochemistry.jpg";
+    import battery from "../../assets/battery.jpg";
+    import SubjectButton from "../../lib/components/subjectButton.svelte";
     let correctans;
 
     let formattedTime = "20:00"; 
@@ -43,25 +50,67 @@
         sub = 1;
     };
 </script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Acme&family=DM+Sans:opsz@9..40&family=Exo&family=K2D&family=Kaisei+Tokumin&family=Karma:wght@500&family=KoHo:wght@500&family=Merriweather&family=Offside&family=Ruslan+Display&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Exo&family=Kaisei+Tokumin:wght@500&family=Merriweather&family=Share+Tech+Mono&display=swap');
+    #material {
+        background: url("../../assets/material.png"), linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1));
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center left;
+        font-family: "Acme";
+    }
+    #counter {
+        height: 11.66666vw;
+        width: 11.66666vw;
+        border-radius: 9999px;
+        font-family: 'Share Tech Mono';
+        font-size: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        --tw-text-opacity: 1;
+        color: rgb(0 0 0 / var(--tw-text-opacity));
+        background-color: #D0F3FF;
+        z-index: 0;
+    }
+</style>
 
-<main>
-    {#if sub == 0}
-    <h1>your subjects: <br></h1>
-    <a href="#" on:click={() => onclick("Chemistry")}>chemistry <br></a>
-    <a href="#" on:click={() => onclick("Ml")}>Ml <br></a>
-    <a href="#" on:click={() => onclick("Physics")}>physics <br></a>
-    {/if}
-    {#if sub == 1}
-    <h1>select your topic:</h1>
+{#if sub == 0}
+<main class="grow flex flex-col items-center gap-y-8">
+    <div id="material" class="flex flex-row h-[12.222vh] my-[2vh] w-[72vw] justify-center items-center">
+        <div class="font-medium text-4xl text-grey-800 text-center">
+            ASSESS YOURSELF
+        </div>
+    </div>
+    <p class="text-center text-white font-['MerriWeather'] text-4xl">Select your subject</p>
+    <div class="flex flex-row gap-x-7">
+        <button on:click={() => onclick("Chemistry")}><SubjectButton src={chem} title="chemistry"/></button>
+        <button on:click={() => onclick("Ml")}><SubjectButton src={ml} title="ML - I"/></button>
+        <button on:click={() => onclick("Physics")}><SubjectButton src={physics} title="physics"/></button>
+    </div>
+</main>
+{/if}
+{#if sub == 1}
+<main class="grow flex flex-col items-center gap-y-8">
+    <div id="material" class="flex flex-row h-[12.222vh] my-[2vh] w-[72vw] justify-center items-center">
+        <div class="font-medium text-4xl text-grey-800 text-center">
+            ASSESS YOURSELF
+        </div>
+    </div>
+    <p class="text-center text-white font-['MerriWeather'] text-4xl">Select your topic</p>
     {#if val === "Chemistry"}
     <a href="/corrosion" >corrosion <br></a>
     <a href="/electro" >electrochemistry <br></a>
     <a href="/battech" >battery Tech <br></a>
     {/if}
     {#if val === "Physics"}
-    <a href="#">ray optics <br></a>
-    <a href="#">hmm <br></a>
-    <a href="#">hmmmm <br></a>
+    <div class="flex flex-row gap-x-7">
+        <button>ray optics </button>
+        <button>hmm </button>
+        <button>hmmmm </button>
+    </div>
     {/if}
     {#if val === "Ml"}
     <a href="/lr" on:click={() => onclicktop("lr")}>Linear Regression <br></a>
@@ -126,3 +175,5 @@
     {/if}
     {/if}
 </main>
+{/if}
+

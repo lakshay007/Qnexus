@@ -27,9 +27,9 @@
         </div>
     </div>
     <div class="flex flex-row flex-wrap m-[5vw] gap-[2vw]">
-        <StorePart  image={coupon} text="Coupon at max" price="100"></StorePart>
-        <StorePart image={food} text="Food Coupon FC"  price="300"></StorePart>
-        <StorePart image={tshirt} text="MIT TShirt"  price="700"></StorePart>
-        <StorePart image={hoodie} text="MIT Hoodie"  price="1000"></StorePart>
+        <StorePart image={coupon} text="Coupon at max" price="100" stock=1 />
+        <StorePart image={food} text="Food Coupon FC"  price="300" stock=1 />
+        <StorePart image={tshirt} text="MIT TShirt"  price="700" stock=1 />
+        <StorePart image={hoodie} text="MIT Hoodie"  price="1000" stock=0 />
     </div>
 </main>
