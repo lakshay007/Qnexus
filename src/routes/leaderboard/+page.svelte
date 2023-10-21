@@ -18,7 +18,7 @@ const auth = getAuth();
                 yocoins = x.data().credits;
                 
             }})
-        const q = query(docref,orderBy("playercoins", "desc"),limit(100));
+        const q = query(docref,orderBy("credits", "desc"),limit(100));
         await getDocs(q)
         .then(async(querySnapshot) => {
         querySnapshot.forEach(async(docreff) => {
@@ -70,7 +70,7 @@ import coin from "../../assets/coin.png";
                     <div class="text-white font-bold font-['MerriWeather']">{yoid}</div>
                 </div>
                 <div class="flex flex-row">
-                    <p class="text-white font-bold font-['MerriWeather']">Vault: </p>
+                    <p class="text-white font-bold font-['MerriWeather']">Total coins: </p>
                     <div class="grow"></div>
                     <p class="text-white font-bold font-['MerriWeather']">{yocoins}</p>
                 </div>
@@ -91,7 +91,7 @@ import coin from "../../assets/coin.png";
                     PLAYER
                 </div>
                 <div class="m-4">
-                    COIN
+                    TOTAL COINS
                 </div>
             </div>
             <div class="grow flex flex-col" style="overflow-y: auto;">
