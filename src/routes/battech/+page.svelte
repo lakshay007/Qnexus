@@ -35,7 +35,13 @@ import { db } from "../../firebase1/firebaseConfig";
     <Radio bind:group value={2}>{cheme[i].Option2}</Radio> <br>
     <Radio bind:group value={3}>{cheme[i].Option3}</Radio> <br>
     <Radio bind:group value={4}>{cheme[i].Option4}</Radio> <br>
+    {#if i==9}
+    <button type="button" on:click={handleNext}>submit</button>
+    {/if}
+    {#if i<9}
     <button type="button" on:click={handleNext}>next</button>
+    {/if}
+
     {/if}
 </main>
 <style>

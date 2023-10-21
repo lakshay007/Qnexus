@@ -5,7 +5,7 @@ import { db } from "../../firebase1/firebaseConfig";
     import { onMount } from "svelte";
     import Radio from '../../lib/components/Radio.svelte';
     import corrq from '../../questions/questions.json';
-    let group = 0,formattedTime,i=0,correctans = 0;
+    let group = 0,formattedTime,i=0,correctans = 0,submitted = 0;
     let timerloaded = 0;
     onMount(async()=>{
         let countdown = 1200;
@@ -35,8 +35,13 @@ import { db } from "../../firebase1/firebaseConfig";
     <Radio bind:group value={2}>{corrq[i].Option2}</Radio> <br>
     <Radio bind:group value={3}>{corrq[i].Option3}</Radio> <br>
     <Radio bind:group value={4}>{corrq[i].Option4}</Radio> <br>
+    {#if i==14}
+    <button type="button" on:click={handleNext}>submit</button>
+    {/if}
+    {#if i<14}
     <button type="button" on:click={handleNext}>next</button>
     {/if}
+        {/if}
 </main>
 <style>
     

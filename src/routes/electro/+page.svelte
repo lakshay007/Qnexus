@@ -24,8 +24,15 @@ import { db } from "../../firebase1/firebaseConfig";
         if(electr[i].CorrectOption == group){
             correctans++;
         }
+        group = 0;
         i++;
     }
+    let handlesubmit = () =>{
+            if(electr[i].CorrectOption == group){
+                correctans++;
+            }
+            submitted = 1;
+        }
 </script>
 <main>
     {#if timerloaded ==1}

@@ -117,62 +117,6 @@
     <a href="/lr2">Logistic regression <br></a>
     <a href="/cluster" >Clustering <br></a>
     {/if}
-    {#if sub === 2}
-    {#if valtop === "corrosion"}
-    <h1>{formattedTime}</h1>
-    <h1>{corrq[i].question}</h1>
-    <Radio bind:group value={1}>{corrq[i].option1}</Radio> <br>
-    <Radio bind:group value={2}>{corrq[i].option2}</Radio> <br>
-    <Radio bind:group value={3}>{corrq[i].option3}</Radio> <br>
-    <Radio bind:group value={4}>{corrq[i].option4}</Radio> <br>
-    <button type="button" on:click={handleNext}>next</button>
-    {/if}
-    {#if valtop === "electro"}
-    <h1>{formattedTime}</h1>
-    <h1>{electr[i].Question}</h1>
-    <Radio bind:group value={1}>{electr[i].Option1}</Radio> <br>
-    <Radio bind:group value={2}>{electr[i].Option2}</Radio> <br>
-    <Radio bind:group value={3}>{electr[i].Option3}</Radio> <br>
-    <Radio bind:group value={4}>{electr[i].Option4}</Radio> <br>
-    <button type="button" on:click={handleNext}>next</button>
-    {/if}
-    {#if valtop === "battech"}
-    <h1>{formattedTime}</h1>
-    <h1>{cheme[i].Question}</h1>
-    <Radio bind:group value={1}>{cheme[i].Option1}</Radio> <br>
-    <Radio bind:group value={2}>{cheme[i].Option2}</Radio> <br>
-    <Radio bind:group value={3}>{cheme[i].Option3}</Radio> <br>
-    <Radio bind:group value={4}>{cheme[i].Option4}</Radio> <br>
-    <button type="button" on:click={handleNext}>next</button>
-    {/if}
-    {#if valtop === "lr"}
-    <h1>{formattedTime}</h1>
-    <h1>{lr1[i].Question}</h1>
-    <Radio bind:group value={1}>{lr1[i].Option1}</Radio> <br>
-    <Radio bind:group value={2}>{lr1[i].Option2}</Radio> <br>
-    <Radio bind:group value={3}>{lr1[i].Option3}</Radio> <br>
-    <Radio bind:group value={4}>{lr1[i].Option4}</Radio> <br>
-    <button type="button" on:click={handleNext}>next</button>
-    {/if}
-    {#if valtop === "lr2"}
-    <h1>{formattedTime}</h1>
-    <h1>{lr2[i].Question}</h1>
-    <Radio bind:group value={1}>{lr2[i].Option1}</Radio> <br>
-    <Radio bind:group value={2}>{lr2[i].Option2}</Radio> <br>
-    <Radio bind:group value={3}>{lr2[i].Option3}</Radio> <br>
-    <Radio bind:group value={4}>{lr2[i].Option4}</Radio> <br>
-    <button type="button" on:click={handleNext}>next</button>
-    {/if}
-    {#if valtop === "cluster"}
-    <h1>{formattedTime}</h1>
-    <h1>{clus[i].Question}</h1>
-    <Radio bind:group value={1}>{clus[i].Option1}</Radio> <br>
-    <Radio bind:group value={2}>{clus[i].Option2}</Radio> <br>
-    <Radio bind:group value={3}>{clus[i].Option3}</Radio> <br>
-    <Radio bind:group value={4}>{clus[i].Option4}</Radio> <br>
-    <button type="button" on:click={handleNext}>next</button>
-    {/if}
-    {/if}
 </main>
 {/if}
 

@@ -7,6 +7,7 @@
         import cheme from '../../questions/lr1.json';
         let group = 0,formattedTime,i=0,correctans = 0;
         let timerloaded = 0;
+        let submitted = 0;
         onMount(async()=>{
             let countdown = 1200;
             const timer = setInterval(() => {
@@ -24,10 +25,18 @@
             if(cheme[i].CorrectOption == group){
                 correctans++;
             }
+            group = 0;
             i++;
+        }
+        let handlesubmit = () =>{
+            if(cheme[i].CorrectOption == group){
+                correctans++;
+            }
+            submitted = 1;
         }
     </script>
     <main>
+        {#if submitted == 0}
         {#if timerloaded ==1}
         <h1>{formattedTime}</h1>
         <h1>{cheme[i].Question}</h1>
@@ -35,7 +44,16 @@
         <Radio bind:group value={2}>{cheme[i].Option2}</Radio> <br>
         <Radio bind:group value={3}>{cheme[i].Option3}</Radio> <br>
         <Radio bind:group value={4}>{cheme[i].Option4}</Radio> <br>
-        <button type="button" on:click={handleNext}>next</button>
+        {#if i==13}
+    <button type="button" on:click={handlesubmit}>submit</button>
+    {/if}
+    {#if i<13}
+    <button type="button" on:click={handleNext}>next</button>
+    {/if}
+        {/if}
+        {/if}
+        {#if submitted==1}
+        <h1>you were able to answer {correctans} questions correctly</h1>
         {/if}
     </main>
     <style>

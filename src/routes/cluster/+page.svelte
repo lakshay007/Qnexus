@@ -6,7 +6,7 @@
         import Radio from '../../lib/components/Radio.svelte';
         import cheme from '../../questions/clustering.json';
         let group = 0,formattedTime,i=0,correctans = 0;
-        let timerloaded = 0;
+        let timerloaded = 0,attempted = 0;
         onMount(async()=>{
             let countdown = 1200;
             const timer = setInterval(() => {
@@ -35,7 +35,12 @@
         <Radio bind:group value={2}>{cheme[i].Option2}</Radio> <br>
         <Radio bind:group value={3}>{cheme[i].Option3}</Radio> <br>
         <Radio bind:group value={4}>{cheme[i].Option4}</Radio> <br>
-        <button type="button" on:click={handleNext}>next</button>
+        {#if i==13}
+    <button type="button" on:click={handleNext}>submit</button>
+    {/if}
+    {#if i<13}
+    <button type="button" on:click={handleNext}>next</button>
+    {/if}
         {/if}
     </main>
     <style>
