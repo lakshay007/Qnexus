@@ -5,7 +5,7 @@ import { db } from "../../firebase1/firebaseConfig";
     import { onMount } from "svelte";
     import Radio from '../../lib/components/Radio.svelte';
     import electr from '../../questions/questionse.json';
-    let group = 0,formattedTime,i=0,correctans = 0;
+    let group = 0,formattedTime,i=0,correctans = 0,submitted = 0;
     let timerloaded = 0;
     onMount(async()=>{
         let countdown = 1200;
@@ -35,6 +35,7 @@ import { db } from "../../firebase1/firebaseConfig";
         }
 </script>
 <main>
+    {#if submitted == 0}
     {#if timerloaded ==1}
     <h1>{formattedTime}</h1>
     <h1>{electr[i].Question}</h1>
@@ -42,8 +43,17 @@ import { db } from "../../firebase1/firebaseConfig";
     <Radio bind:group value={2}>{electr[i].Option2}</Radio> <br>
     <Radio bind:group value={3}>{electr[i].Option3}</Radio> <br>
     <Radio bind:group value={4}>{electr[i].Option4}</Radio> <br>
+    {#if i==14}
+    <button type="button" on:click={handlesubmit}>submit</button>
+    {/if}
+    {#if i<14}
     <button type="button" on:click={handleNext}>next</button>
     {/if}
+        {/if}
+        {/if}
+        {#if submitted == 1}
+            <h1>you were able to answer {correctans} questions correctly</h1>
+            {/if}
 </main>
 <style>
     

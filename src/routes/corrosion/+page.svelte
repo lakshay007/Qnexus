@@ -43,10 +43,10 @@ import { db } from "../../firebase1/firebaseConfig";
     <Radio bind:group value={2}>{corrq[i].Option2}</Radio> <br>
     <Radio bind:group value={3}>{corrq[i].Option3}</Radio> <br>
     <Radio bind:group value={4}>{corrq[i].Option4}</Radio> <br>
-    {#if i==14}
+    {#if i==9}
     <button type="button" on:click={handlesubmit}>submit</button>
     {/if}
-    {#if i<14}
+    {#if i<9}
     <button type="button" on:click={handleNext}>next</button>
     {/if}
         {/if}
