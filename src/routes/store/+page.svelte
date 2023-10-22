@@ -51,8 +51,8 @@ onAuthStateChanged(auth, async(user) => {
 await setDoc(doc(db, "orders", user.uid), {
   [data[itemnum].name]:increment(1)
 },{merge:true});  
-  }})
-  if(!alert('Purchase was successful!!')){window.location.reload();};
+  alert('purchase was successful!'); window.location.reload()}})
+  
 }
      else{
         notenoughcoins = 1;
@@ -106,7 +106,7 @@ await setDoc(doc(db, "orders", user.uid), {
             </div>
             <div>
                 {#if data[3].count == 0}
-                    <p class="text-white font-['MerriWeather']">Stock is out!</p>
+                    <p class="text-white font-['MerriWeather']">Out of stock!!</p>
                 {:else}
                     <button on:click={() => handleredeem(3)} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
                 {/if}
@@ -134,7 +134,7 @@ await setDoc(doc(db, "orders", user.uid), {
             </div>
             <div>
                 {#if data[2].count == 0}
-                    <p class="text-white font-['MerriWeather']">Stock is out!</p>
+                    <p class="text-white font-['MerriWeather']">Out of stock!!</p>
                 {:else}
                     <button on:click={() => handleredeem(2)} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
                 {/if}
@@ -160,7 +160,7 @@ await setDoc(doc(db, "orders", user.uid), {
             </div>
             <div>
                 {#if data[1].count == 0}
-                    <p class="text-white font-['MerriWeather']">Stock is out!</p>
+                    <p class="text-white font-['MerriWeather']">Out of stock!!</p>
                 {:else}
                     <button on:click={() => handleredeem(1)} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
                 {/if}
@@ -182,7 +182,7 @@ await setDoc(doc(db, "orders", user.uid), {
             
             <div>
                 {#if data[0].count == 0}
-                    <p class="text-white font-['MerriWeather']">Stock is out!</p>
+                    <p class="text-white font-['MerriWeather']">Out of stock!!</p>
                 {:else}
                     <button on:click={() => handleredeem(0)} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
                 {/if}

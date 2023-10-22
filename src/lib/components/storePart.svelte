@@ -54,7 +54,7 @@
     </div>
     <div>
         {#if stock == 0}
-            <p class="text-white font-['MerriWeather']">Stock is out!</p>
+            <p class="text-white font-['MerriWeather']">Out of stock!!</p>
         {:else}
             <button on:click={handleredeem} class="btn bg-[#FEC842] text-white btn-sm w-[16vh]">REDEEM</button>
         {/if}
