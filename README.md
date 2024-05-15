@@ -32,6 +32,9 @@ QNexus is a gamified educational platform designed to blend fun and learning int
 
 - Svelte
 - Firebase
+- HTML, JS
+- Tailwind CSS
+- Daisy UI
 
 ## Contributing
 
