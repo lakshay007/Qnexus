@@ -2,7 +2,7 @@
 
 QNexus is a gamified educational platform, designed to blend fun and learning into a seamless experience. Embracing the motto 'Learn Hard, Game Harder', QNexus integrates academic content with interactive games, creating an engaging learning environment.
 
-## Built for M# (Manipal) Hackathon, 2023
+## Built for M# (Manipal) Hackathon, 2023 
 
 ## Features
 
