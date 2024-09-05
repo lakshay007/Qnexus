@@ -10,7 +10,7 @@
   import Participant from '../lib/components/participant.svelte';
   import QnexusColor from '../assets/q-nexus-logo-light-transparent.png'
   import Discover from '../lib/components/discover.svelte';
-  import inView from "../lib/components/animationScroll/InView"
+
   import bg1 from "../assets/bg1.jpg";
   import { GoogleAuthProvider ,signInWithPopup } from "firebase/auth";
   import { auth } from "../firebase1/firebaseConfig";
